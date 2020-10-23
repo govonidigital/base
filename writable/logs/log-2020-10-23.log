@@ -1,0 +1,15 @@
+CRITICAL - 2020-10-23 04:21:47 --> Unable to connect to the database.
+#0 E:\projetos\web\base\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 E:\projetos\web\base\system\Database\BaseConnection.php(1548): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#2 E:\projetos\web\base\system\Database\BaseConnection.php(1591): CodeIgniter\Database\BaseConnection->listTables()
+#3 E:\projetos\web\base\app\Models\GroceryCrudModel.php(43): CodeIgniter\Database\BaseConnection->tableExists('customers')
+#4 E:\projetos\web\base\app\Libraries\GroceryCrud.php(635): App\Models\GroceryCrudModel->db_table_exists('customers')
+#5 E:\projetos\web\base\app\Libraries\GroceryCrud.php(4970): App\Libraries\grocery_CRUD_Model_Driver->table_exists('customers')
+#6 E:\projetos\web\base\app\Libraries\GroceryCrud.php(4450): App\Libraries\GroceryCrud->get_table()
+#7 E:\projetos\web\base\app\Libraries\GroceryCrud.php(4467): App\Libraries\GroceryCrud->pre_render()
+#8 E:\projetos\web\base\app\Controllers\Examples.php(13): App\Libraries\GroceryCrud->render()
+#9 E:\projetos\web\base\system\CodeIgniter.php(918): App\Controllers\Examples->customers_management()
+#10 E:\projetos\web\base\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Examples))
+#11 E:\projetos\web\base\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\projetos\web\base\index.php(45): CodeIgniter\CodeIgniter->run()
+#13 {main}
