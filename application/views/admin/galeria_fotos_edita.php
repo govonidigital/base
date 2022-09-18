@@ -8,13 +8,13 @@
 <div class='container-fluid'>
     <div class="row">
         <div class="col-12"><br /><br />
-            <form action="<?php echo base_url('admin/galerias_fotos/banner_edita_salva'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo base_url('admin/galerias_fotos/galeria_fotos_edita_salva'); ?>" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12 col-md-2"></div>
                 <div class="col-12 col-md-4">
-                    <input type="hidden" id="id_banner" name="id_banner" value="<?php echo $gf->id_banner; ?>"/>
+                    <input type="hidden" id="id_galeria_fotos" name="id_galeria_fotos" value="<?php echo $gf->id_galeria_fotos; ?>"/>
                     <label for="titulo">Título da imagem
-                    <i class="fas fa-question-circle" title="O título é opcional, apenas para identificar mais facilmente a quê o banner se refere."></i>
+                    <i class="fas fa-question-circle" title="O título é opcional, apenas para identificar mais facilmente a quê a imagem se refere."></i>
                     </label>
                     <input type="text" class="form-control" id="titulo" name="titulo" value="<?php echo $gf->titulo; ?>"/><br />
                     <label for="ordem">Ordem
@@ -22,7 +22,7 @@
                     </label>
                     <input type="number" class="form-control" id="ordem" name="ordem" value="<?php echo $gf->ordem; ?>"/><br />
                     <label for="link">Link
-                    <i class="fas fa-question-circle" title="Página para onde o banner direciona quando clicado. Se não deve levar a nenhuma página, deixe o campo em branco."></i>
+                    <i class="fas fa-question-circle" title="Página para onde a imagem direciona quando clicado. Se não deve levar a nenhuma página, deixe o campo em branco."></i>
                     </label>
                     <input type="text" class="form-control" id="link" name="link" value="<?php echo $gf->link; ?>"/><br />
                     
