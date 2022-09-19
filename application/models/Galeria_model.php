@@ -1,9 +1,9 @@
 <?php
-Class Galerias_model extends CI_Model{
+Class Galeria_model extends CI_Model{
 
-    function lista_galerias($ativo = ''){
+    function lista($ativo = ''){
         $this->db->select('*');
-        $this->db->from('galerias');
+        $this->db->from('galeria');
         
         if ($ativo == 'SIM'){
             $this->db->where('ativo', 'SIM');
@@ -18,7 +18,7 @@ Class Galerias_model extends CI_Model{
         
     function ver($id_galeria){    
         $this->db->select('*');
-        $this->db->from('galerias');
+        $this->db->from('galeria');
         $this->db->where('id_galeria', $id_galeria);
         
         $qry = $this->db->get();
@@ -26,8 +26,8 @@ Class Galerias_model extends CI_Model{
         return $qry->result();    
     } 
     
-    function galerias_novo($data){
-        $this->db->insert('galerias',$data);
+    function novo($data){
+        $this->db->insert('galeria',$data);
 
         $retorno = array( 
             'id_galeria'   => $this->db->insert_id(),
@@ -37,9 +37,9 @@ Class Galerias_model extends CI_Model{
         return $retorno;  
     }
     
-    function galerias_edita_salva($id_galeria,$data){
+    function edita_salva($id_galeria,$data){
         $this->db->where('id_galeria', $id_galeria);
-        $this->db->update('galerias', $data);
+        $this->db->update('galeria', $data);
 
         $retorno = array(  
             'sql'       => $this->db->last_query()
@@ -49,9 +49,9 @@ Class Galerias_model extends CI_Model{
         
     }
     
-    function galerias_deleta($data){
+    function deleta($data){
         $this->db->where('id_galeria',$data);
-        $this->db->delete('galerias');
+        $this->db->delete('galeria');
         
         $retorno = array(  
             'sql'       => $this->db->last_query()

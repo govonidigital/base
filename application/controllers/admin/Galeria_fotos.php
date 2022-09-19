@@ -4,35 +4,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Galeria_fotos extends CI_Controller {
 
 
-	public function index()
-	{
-		$data['seo_title'] = '';
-		$data['seo_description'] = '';
-		$data['seo_keywords'] = '';
+	public function lista(){
 
-		$this->template->load('template','galeria', $data);
-	}
-
-	public function lista(){ 
         $this->load->model('galeria_fotos_model');
-       
         $data['galeria_fotos'] = $this->galeria_fotos_model->lista_galeria_fotos($this->uri->segment(4));
 
-        $this->template->load('admin/template', 'admin/galeria_fotos', $data);  
+        $this->template->load('admin/_template', 'admin/galeria_fotos', $data);  
     }
 
-	public function galeria_fotos_novo(){
-        $this->load->model('galeria_fotos_model');
-        
-        $data['galeria_fotos'] = $this->galeria_fotos_model->ver($this->uri->segment(5));
-        
-        $this->template->load('admin/template', 'admin/galeria_fotos_novo', $data);
+	public function novo(){
+
+        $data['id_galeria'] = $this->uri->segment(4);
+        $this->template->load('admin/_template', 'admin/galeria_fotos_novo', $data);
     }
 
-	function galeria_fotos_novo_salva(){
+	function novo_salva(){
         $this->load->model('galeria_fotos_model');
         
-        $config['upload_path']          = './assets/img/galeria_fotos/';
+        $config['upload_path']          = './assets/img/galeria/';
         $config['allowed_types']        = 'JPG|PNG|JPEG|jpg|png|jpeg';
         $config['encrypt_name']        = true;
 
@@ -42,8 +31,9 @@ class Galeria_fotos extends CI_Controller {
         
         $data = array(
         'titulo' => $this->input->post('titulo'), 
+        'id_galeria' => $this->input->post('id_galeria'), 
         'link' => $this->input->post('link'),
-        'ordem' => $this->input->post('ordem'), 
+        'ordem' => $this->input->post('ordem'),
         'ativo' => $this->input->post('ativo'),
         );
         
@@ -53,7 +43,7 @@ class Galeria_fotos extends CI_Controller {
             $data = $data + array('imagem' => $file_name);
 
             $config['image_library'] = 'gd2';
-            $config['source_image'] = "./assets/img/galeria_fotos/$file_name";
+            $config['source_image'] = "./assets/img/galeria/$file_name";
             $config['maintain_ratio'] = TRUE;
             $config['width']         = 1600;
 
@@ -70,34 +60,25 @@ class Galeria_fotos extends CI_Controller {
 
         }
         
-        $retorno = $this->galeria_fotoss_model->galeria_fotoss_novo($data);
+        $retorno = $this->galeria_fotos_model->galeria_fotos_novo($data);
         
+   
 
-        // LOGS
-        $this->load->model('logs_model');
-        $dadosU = array(
-            'usuario'   => $this->session->userdata('nome'),
-            'modulo'    => 'galeria_fotos',
-            'acao'      => 'INSERT',
-            'log'       => $retorno['sql'],
-            'data'      => date("Y-m-d H:i:s")
-        );
-        $this->logs_model->cadastrar($dadosU);    
-
-        redirect('admin/galeria_fotoss/lista','refresh');
+        redirect('admin/galeria_fotos/lista/'.$this->input->post('id_galeria'),'refresh');
     }
 
-	public function galeria_fotos_edita(){
+	public function edita(){
+
+
         $this->load->model('galeria_fotoss_model');
         
-        
-
         $data['galeria_fotoss'] = $this->galeria_fotoss_model->ver($this->uri->segment(5));
         
-        $this->template->load('admin/template', 'admin/galeria_fotoss_edita', $data);
+        $this->template->load('admin/_template', 'admin/galeria_fotoss_edita', $data);
     }
 
-	public function galeria_fotos_edita_salva(){
+	public function edita_salva(){
+
         $this->load->model('galeria_fotoss_model');
         
         $config['upload_path']          = './assets/img/galeria_fotos/';
@@ -123,28 +104,21 @@ class Galeria_fotos extends CI_Controller {
             }
             
         
-        $retorno = $this->galeria_fotoss_model->galeria_fotoss_edita_salva($this->input->post('id_galeria_fotos'),$data);
+        $retorno = $this->galeria_fotoss_model->galeria_fotos_edita_salva($this->input->post('id_galeria_fotos'),$data);
         
 
-        // LOGS
-        $this->load->model('logs_model');
-        $dadosU = array(
-            'usuario'   => $this->session->userdata('nome'),
-            'modulo'    => 'galeria_fotos',
-            'acao'      => 'UPDATE',
-            'log'       => $retorno['sql'],
-            'data'      => date("Y-m-d H:i:s")
-        );
-        $this->logs_model->cadastrar($dadosU);  
+ 
 
         redirect('admin/galeria_fotoss/lista','refresh');
     }
 
-	public function galeria_fotos_deleta($data){
+
+
+	public function deleta($data){
+
+
         $this->load->model('galeria_fotoss_model');
-        
         $row = $this->uri->segment(4);
-        
         $retorno = $this->galeria_fotoss_model->galeria_fotoss_deleta($row);
 
         // LOGS

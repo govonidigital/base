@@ -7,7 +7,8 @@
 <div class='container-fluid'>
     <div class="row">
         <div class="col-12"><br /><br />
-            <form action="<?php echo base_url('admin/galeria_fotos/galeria_fotos_novo_salva'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo base_url('admin/galeria_fotos/novo_salva'); ?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_galeria" value="<?php echo $id_galeria; ?>"/>
             <div class="row">
                 <div class="col-12 col-md-2"></div>
                 <div class="col-12 col-md-4">

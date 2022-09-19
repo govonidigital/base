@@ -10,6 +10,6 @@ class Principal extends CI_Controller {
 		$data['seo_description'] = '';
 		$data['seo_keywords'] = '';
 
-		$this->template->load('template','principal', $data);
+		$this->template->load('admin/template','admin/principal', $data);
 	}
 }

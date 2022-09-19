@@ -4,8 +4,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 
 
-<form action="<?php echo base_url('admin/galerias/galerias_novo_salva'); ?>" method="post" enctype="multipart/form-data"> 
-<div class='container-fluid'>  
+<form action="<?php echo base_url('admin/galeria/novo_salva'); ?>" method="post" enctype="multipart/form-data"> 
+<div class='container'>  
     <div class="row" style="background-color: #dddddd">
 
             

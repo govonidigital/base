@@ -43,10 +43,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 
-<div class='container'>
-    <div class='row'>
-        <div class='col-12'>
-            topo
+<div class='container mb-3'>
+    <div class='row py-2'>
+        <div class='col-2'>
+            <img src='<?php echo base_url('assets/img/logo.png'); ?>' class='img-fluid'>
+        </div>
+        <div class='col-10'>
+        <a href='<?php echo base_url('admin/principal'); ?>'>Principal</a>
+        <a href='<?php echo base_url('admin/galeria'); ?>'>Galeria</a>
+        <a href='<?php echo base_url('admin/principal'); ?>'>Sair</a>
         </div>
     </div>
 </div>
@@ -59,8 +64,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class='container'>
     <div class='row'>
-        <div class='col-12'>
-            rodape
+        <div class='col-12 text-center'>
+            Desenvolvido por <a href='https://www.govoni.com.br' target='_blank'>Govoni Digital</a>
         </div>
     </div>
 </div>
