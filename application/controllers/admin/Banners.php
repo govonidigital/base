@@ -121,16 +121,6 @@ class Banners extends CI_Controller {
         
         $retorno = $this->banners_model->banners_deleta($row);
 
-        // LOGS
-        $this->load->model('logs_model');
-        $dadosU = array(
-            'usuario'   => $this->session->userdata('nome'),
-            'modulo'    => 'BANNERS',
-            'acao'      => 'DELETE',
-            'log'       => $retorno['sql'],
-            'data'      => date("Y-m-d H:i:s")
-        );
-        $this->logs_model->cadastrar($dadosU);    
 
         redirect($_SERVER['HTTP_REFERER']);
     }

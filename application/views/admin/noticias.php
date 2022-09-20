@@ -43,7 +43,7 @@
                                             <td>$no->resumo</td>
                                             <td>$no->data</td>
                                             <td><a href='".base_url('admin/noticias/noticia_edita')."/$no->id_noticia' class='btn btn-primary btn-sm'>Editar</a>&nbsp;
-                                            <a href='".base_url('admin/noticias/noticia_deleta')."/$no->id_noticia' class='btn btn-danger btn-sm'>Deletar</a></td></tr>";
+                                            <a href='#' data-id_noticia='".$no->id_noticia."' class='btn btn-danger btn-sm deletar'>Deletar</a></td></tr>";
                                         endforeach;
                                         echo "
                                     </table>
@@ -61,3 +61,36 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="modalExcluir" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalExcluir">Excluir notícia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente excluir esta notícia?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="#" id="btnExcluir" class="btn btn-danger">Excluir</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+ 
+    $(document).ready(function(){
+        $('.deletar').click(function(e){
+            e.preventDefault();
+            var id_noticia = $(this).attr('data-id_noticia');
+            $('#modalExcluir').modal('show');
+            $('#btnExcluir').click(function(){
+                window.location.href = "<?php echo base_url('admin/noticias/noticia_deleta'); ?>"+"/"+id_noticia;
+            });
+        });
+    });
+    </script>

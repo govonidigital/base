@@ -9,58 +9,88 @@
     <div class='row'>
         <div class='col-12'>
 
-<div class="app-content content">
-    <div class="content-wrapper">
-        <div class="content-body">
-            <section id="pagination">
-                <div class="row">
-                    <div class="col-md-12"><br />
-                        <a class="btn btn-info" style="padding-left: 30px; padding-right: 30px;" href="<?php echo base_url('admin/galeria_fotos/novo/'.$this->uri->segment(4)); ?>">Novo</a><br /><br />
+            <div class="app-content content">
+                <div class="content-wrapper">
+                    <div class="content-body">
+                        <section id="pagination">
+                            <div class="row">
+                                <div class="col-md-12"><br />
+                                    <a class="btn btn-info" style="padding-left: 30px; padding-right: 30px;" href="<?php echo base_url('admin/galeria_fotos/novo/'.$this->uri->segment(4)); ?>">Novo</a><br /><br />
+                                </div>
+                            </div>
+                            <?php echo"
+                            <div class='row'>
+                                <div class='col-md-12 table-responsive'>
+                                    <table class='table table-striped'>
+                                        <tr>
+                                            <th>
+                                                Título
+                                            </th>
+                                            <th>
+                                                Imagem
+                                            </th>
+                                            <th>
+                                                Link
+                                            </th>
+                                            <th>
+                                                Ativo
+                                            </th>
+                                            <th>
+                                                Ações
+                                            </th>
+                                        </tr>
+                                        "; foreach($galeria_fotos as $gf):
+                                            echo "<tr><td> $gf->titulo </td>
+                                            <td><img src='".base_url('assets/img/galeria/')."$gf->imagem' style='height: 40px; width: auto;'/></td>
+                                            <td>$gf->link</td>
+                                            <td>$gf->ativo</td>
+                                            <td><a href='".base_url('admin/galeria_fotos/edita')."/$gf->id_galeria_foto' class='btn btn-primary btn-sm'>Editar</a>&nbsp;
+                                            <a href='#' data-id='".$gf->id_galeria_foto."' class='btn btn-danger btn-sm deletar'>Deletar</a></td></tr>";
+                                        endforeach;
+                                        echo "
+                                    </table>
+                                </div>    
+                            </div>
+                            <div class='row' style='margin-bottom: 30px; margin-top: 30px;'>
+                                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12' style='font-size: 12px;'>
+                                </div>   
+                            </div>"; 
+                            ?>
+                        </section>
                     </div>
                 </div>
-                <?php echo"
-                <div class='row'>
-                    <div class='col-md-12 table-responsive'>
-                        <table class='table table-striped'>
-                            <tr>
-                                <th>
-                                    Título
-                                </th>
-                                <th>
-                                    Imagem
-                                </th>
-                                <th>
-                                    Link
-                                </th>
-                                <th>
-                                    Ativo
-                                </th>
-                                <th>
-                                    Ações
-                                </th>
-                            </tr>
-                            "; foreach($galeria_fotos as $gf):
-                                echo "<tr><td> $gf->titulo </td>
-                                <td><img src='".base_url('assets/img/galeria/')."$gf->imagem' style='height: 40px; width: auto;'/></td>
-                                <td>$gf->link</td>
-                                <td>$gf->ativo</td>
-                                <td><a href='".base_url('admin/galeria_fotos/edita')."/$gf->id_galeria_foto' class='btn btn-primary btn-sm'>Editar</a>&nbsp;
-                                <a href='".base_url('admin/galeria_fotos/deleta')."/$gf->id_galeria_foto' class='btn btn-danger btn-sm'>Deletar</a></td></tr>";
-                            endforeach;
-                            echo "
-                        </table>
-                    </div>    
-                </div>
-                <div class='row' style='margin-bottom: 30px; margin-top: 30px;'>
-                    <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12' style='font-size: 12px;'>
-                    </div>   
-                </div>"; 
-                ?>
-            </section>
+            </div>
         </div>
     </div>
 </div>
 
-</div>
+<div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="modalExcluir" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalExcluir">Excluir foto da geleria ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente excluir esta foto da galeria?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="#" id="btnExcluir" class="btn btn-danger">Excluir</a>
+            </div>
+        </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('.deletar').click(function(){
+            var id = $(this).data('id');
+            $('#modalExcluir').modal('show');
+            $('#btnExcluir').attr('href', '<?php echo base_url('admin/galeria_fotos/deleta'); ?>/'+id);
+        });
+    });
+
+</script>
