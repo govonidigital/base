@@ -51,6 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class='col-10'>
         <a href='<?php echo base_url('admin/principal'); ?>'>Principal</a>
         <a href='<?php echo base_url('admin/galeria'); ?>'>Galeria</a>
+        <a href='<?php echo base_url('admin/banners'); ?>'>Banners</a>
+        <a href='<?php echo base_url('admin/noticias'); ?>'>Notícias</a>
         <a href='<?php echo base_url('admin/principal'); ?>'>Sair</a>
         </div>
     </div>
