@@ -44,8 +44,8 @@
                                             <td>$ga->tag</td>
                                             <td>
                                             <a href='".base_url('admin/galeria_fotos/lista/'.$ga->id_galeria)."' class='btn btn-primary btn-sm'>Ver</a>
-                                            <a href='".base_url('admin/galerias/galerias_edita')."/$ga->id_galeria' class='btn btn-primary btn-sm'>Editar</a>
-                                            <a href='".base_url('admin/galerias/galerias_deleta')."/$ga->id_galeria' class='btn btn-danger btn-sm'>Deletar</a>
+                                            <a href='".base_url('admin/galeria/edita')."/$ga->id_galeria' class='btn btn-primary btn-sm'>Editar</a>
+                                            <a href='".base_url('admin/galeria/galeria_deleta')."/$ga->id_galeria' class='btn btn-danger btn-sm'>Deletar</a>
                                             </td>
                                             </tr>";
                                         endforeach;

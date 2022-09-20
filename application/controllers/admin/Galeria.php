@@ -41,7 +41,7 @@ class Galeria extends CI_Controller {
         $this->load->model('galeria_model');
         
 
-        $data['galerias'] = $this->galeria_model->ver($this->uri->segment(4));
+        $data['galeria'] = $this->galeria_model->ver($this->uri->segment(4));
         
         $this->template->load('admin/_template', 'admin/galeria_edita', $data);
     }
@@ -56,7 +56,7 @@ class Galeria extends CI_Controller {
 			'ativo' => $this->input->post('ativo'),
 		);
         
-        $retorno = $this->galeria_model->galerias_edita_salva($this->input->post('id_galeria'),$data);
+        $retorno = $this->galeria_model->edita_salva($this->input->post('id_galeria'),$data);
         
  
 
@@ -69,7 +69,7 @@ class Galeria extends CI_Controller {
         
         $row = $this->uri->segment(4);
         
-        $retorno = $this->galeria_model->galeria_deleta($row);
+        $retorno = $this->galeria_model->deleta($row);
    
 
         redirect($_SERVER['HTTP_REFERER']);

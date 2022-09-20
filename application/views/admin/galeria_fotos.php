@@ -44,9 +44,8 @@
                                 <td><img src='".base_url('assets/img/galeria/')."$gf->imagem' style='height: 40px; width: auto;'/></td>
                                 <td>$gf->link</td>
                                 <td>$gf->ativo</td>
-                                <td>$gf->tipo</td>
-                                <td><a href='".base_url('admin/galeria_fotos/galeria_fotos_edita')."/$gf->id_galeria_foto' class='btn btn-primary btn-sm'>Editar</a>&nbsp;
-                                <a href='".base_url('admin/galeria_fotos/galeria_fotos_deleta')."/$gf->id_galeria_foto' class='btn btn-danger btn-sm'>Deletar</a></td></tr>";
+                                <td><a href='".base_url('admin/galeria_fotos/edita')."/$gf->id_galeria_foto' class='btn btn-primary btn-sm'>Editar</a>&nbsp;
+                                <a href='".base_url('admin/galeria_fotos/deleta')."/$gf->id_galeria_foto' class='btn btn-danger btn-sm'>Deletar</a></td></tr>";
                             endforeach;
                             echo "
                         </table>

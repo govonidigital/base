@@ -12,10 +12,10 @@ Class Galeria_fotos_model extends CI_Model{
     }
 
         
-    function ver($id_galeria_fotos){    
+    function ver($id_galeria_foto){    
         $this->db->select('*');
         $this->db->from('galeria_fotos');
-        $this->db->where('id_galeria', $id_galeria_fotos);
+        $this->db->where('id_galeria_foto', $id_galeria_foto);
         
         $qry = $this->db->get();
         
@@ -33,8 +33,8 @@ Class Galeria_fotos_model extends CI_Model{
         return $retorno;  
     }
     
-    function galeria_fotos_edita_salva($id_galeria_fotos,$data){
-        $this->db->where('id_galeria_fotos', $id_galeria_fotos);
+    function galeria_fotos_edita_salva($id_galeria_foto,$data){
+        $this->db->where('id_galeria_foto', $id_galeria_foto);
         $this->db->update('galeria_fotos', $data);
 
         $retorno = array(  
@@ -46,7 +46,7 @@ Class Galeria_fotos_model extends CI_Model{
     }
     
     function galeria_fotos_deleta($data){
-        $this->db->where('id_galeria_fotos',$data);
+        $this->db->where('id_galeria_foto',$data);
         $this->db->delete('galeria_fotos');
         
         $retorno = array(  

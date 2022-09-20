@@ -8,11 +8,12 @@
 <div class='container-fluid'>
     <div class="row">
         <div class="col-12"><br /><br />
-            <form action="<?php echo base_url('admin/galerias_fotos/galeria_fotos_edita_salva'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo base_url('admin/galeria_fotos/edita_salva'); ?>" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12 col-md-2"></div>
                 <div class="col-12 col-md-4">
-                    <input type="hidden" id="id_galeria_fotos" name="id_galeria_fotos" value="<?php echo $gf->id_galeria_fotos; ?>"/>
+                    <input type="hidden" id="id_galeria" name="id_galeria" value="<?php echo $gf->id_galeria; ?>"/>
+                    <input type="hidden" id="id_galeria_foto" name="id_galeria_foto" value="<?php echo $gf->id_galeria_foto; ?>"/>
                     <label for="titulo">Título da imagem
                     <i class="fas fa-question-circle" title="O título é opcional, apenas para identificar mais facilmente a quê a imagem se refere."></i>
                     </label>

@@ -18,7 +18,7 @@
 
 <div class='container'>  
     
-    <form action="<?php echo base_url('admin/galerias/galerias_edita_salva'); ?>" method="post" enctype="multipart/form-data"> 
+    <form action="<?php echo base_url('admin/galeria/edita_salva'); ?>" method="post" enctype="multipart/form-data"> 
         <div class="row py-2" style="background-color: #dddddd">
 
         
@@ -28,8 +28,8 @@
                     <h1>Editar Galeria</h1> 
                 </div>  
                 <div class="col-6">
-                    <label for="galeriaa"><b>Galeria</b></label>
-                    <input type="text" class="form-control" id="galeriaa" name="galeriaa" value="<?php echo $g->galeriaa; ?>" required/><br/>
+                    <label for="galeria"><b>Galeria</b></label>
+                    <input type="text" class="form-control" id="galeria" name="galeria" value="<?php echo $g->galeria; ?>" required/><br/>
                 </div> 
                 <div class="col-6">
                     <label for="marca"><b>Tag</b></label>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="col-12">
-                    <input type="hidden" id="id_galeria" name="id_galeria" value='<?php echo $b->id_galeria; ?>'/>
+                    <input type="hidden" id="id_galeria" name="id_galeria" value='<?php echo $g->id_galeria; ?>'/>
 
                     <br /><br />
                     <button class="btn btn-primary" type="submit">Salvar</button>

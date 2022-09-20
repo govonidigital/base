@@ -70,16 +70,16 @@ class Galeria_fotos extends CI_Controller {
 	public function edita(){
 
 
-        $this->load->model('galeria_fotoss_model');
+        $this->load->model('galeria_fotos_model');
         
-        $data['galeria_fotoss'] = $this->galeria_fotoss_model->ver($this->uri->segment(5));
+        $data['galeria_fotos'] = $this->galeria_fotos_model->ver($this->uri->segment(4));
         
-        $this->template->load('admin/_template', 'admin/galeria_fotoss_edita', $data);
+        $this->template->load('admin/_template', 'admin/galeria_fotos_edita', $data);
     }
 
 	public function edita_salva(){
 
-        $this->load->model('galeria_fotoss_model');
+        $this->load->model('galeria_fotos_model');
         
         $config['upload_path']          = './assets/img/galeria_fotos/';
         $config['allowed_types']        = 'jpg|png|jpeg';
@@ -104,12 +104,12 @@ class Galeria_fotos extends CI_Controller {
             }
             
         
-        $retorno = $this->galeria_fotoss_model->galeria_fotos_edita_salva($this->input->post('id_galeria_fotos'),$data);
+        $retorno = $this->galeria_fotos_model->galeria_fotos_edita_salva($this->input->post('id_galeria_foto'),$data);
         
 
  
 
-        redirect('admin/galeria_fotoss/lista','refresh');
+        redirect('admin/galeria_fotos/lista/'.$this->input->post('id_galeria'),'refresh');
     }
 
 
@@ -117,21 +117,11 @@ class Galeria_fotos extends CI_Controller {
 	public function deleta($data){
 
 
-        $this->load->model('galeria_fotoss_model');
+        $this->load->model('galeria_fotos_model');
         $row = $this->uri->segment(4);
-        $retorno = $this->galeria_fotoss_model->galeria_fotoss_deleta($row);
+        $retorno = $this->galeria_fotos_model->galeria_fotos_deleta($row);
 
-        // LOGS
-        $this->load->model('logs_model');
-        $dadosU = array(
-            'usuario'   => $this->session->userdata('nome'),
-            'modulo'    => 'galeria_fotos',
-            'acao'      => 'DELETE',
-            'log'       => $retorno['sql'],
-            'data'      => date("Y-m-d H:i:s")
-        );
-        $this->logs_model->cadastrar($dadosU);    
 
-        redirect($_SERVER['HTTP_REFERER']);
+        redirect('admin/galeria','refresh');
     }
 }
