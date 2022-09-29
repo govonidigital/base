@@ -30,24 +30,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="<?php echo base_url('assets/js/jquery.js');?>"></script>
         <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js');?>"></script>
 
-        
-        
-</head>
+ </head>
+
+ 
 <body class="text-center">
  
-<form class="form-signin" id="form_validate_login" action="<?php echo base_url(); ?>admin/login/loga" method="post">
+<form class="form-signin" id="form_validate_login" action="<?php echo base_url(); ?>admin/login/recupera_senha" method="post">
   <img class="mb-4" src="" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Tela de login</h1>
-  <label for="email" class="sr-only">E-mail</label>
+  <h1 class="h3 mb-3 font-weight-normal">Recupere a senha</h1>
+  <label for="email" class="sr-only">E-mail de recuperação</label>
   <input type="email" id="email" class="form-control" placeholder="Email" required autofocus>
-  <label for="senha" class="sr-only">Senha</label>
-  <input type="password" id="senha" class="form-control" placeholder="Senha" required>
-  <div class="mb-3">
-    <a href="<?php echo base_url(); ?>admin/login/recuperarsenha" class="forPassword"> Esqueceu sua senha?</a>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
   <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
 </form>
 
 </body>
+
+
 </html>
