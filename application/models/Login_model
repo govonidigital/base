@@ -4,25 +4,16 @@ Class Login_model extends CI_Model{
     
     function loga($email, $senha){
         $this->db->select('*');
-        $this->db->from('usuarios');
-        $this->db->join('empresa','(1 = 1)');
-        $this->db->where('usuarios.email', $email);
-        $this->db->where('usuarios.senha', MD5($senha));
+        $this->db->from('login');
+        $this->db->where('email', $email);
+        $this->db->where('senha', MD5($senha));
         $this->db->limit(1);
         
         $query = $this->db->get();
         $data = $query->row();
         
         if($query->num_rows() == 1){
-            $this->session->set_userdata('email', $email);
-            $this->session->set_userdata('logado', 'SIM');
-            $this->session->set_userdata('id_usuario', $data->id_usuario);
-            $this->session->set_userdata('nome', $data->nome);
-            $this->session->set_userdata('avatar', $data->imagem);
-
-            $this->load->library('funcoes');
-            $this->funcoes->importa_avisos();
-     
+            $this->session->set_userdata('logado', true);
             return $query->result();
         }else{
             return false;
@@ -31,25 +22,34 @@ Class Login_model extends CI_Model{
     
     function cadastro($dados){
 
-        $this->db->insert('clientes', $dados);
+        $this->db->insert('login', $dados);
 
         return true;
         
 
     }
+    function inclui($data){
+        $this->db->insert('login',$data);
+
+        $retorno = array( 
+            'id_login'   => $this->db->insert_id(),
+            'sql'         => $this->db->last_query()
+        );
+
+        return $retorno;  
+
+    }
     
-    function edita($id_cliente,$dados){
-        $this->db->where('id_cliente',$id_cliente);
-        $this->db->update('clientes',$dados);
+    function edita($id_login,$dados){
+        $this->db->where('id_login',$id_login);
+        $this->db->update('login',$dados);
     }
     
     function consulta($email){
         
         $this->db->select('*');
-        $this->db->from('clientes');
-        $this->db->join('clientes_usuarios', 'clientes.id_cliente = clientes_usuarios.id_cliente','left');
-        $this->db->where('clientes.email', $email);
-        $this->db->or_where('clientes_usuarios.email', $email);
+        $this->db->from('login');
+        $this->db->where('email', $email);
 
         $this->db->limit(1);
         
@@ -65,42 +65,10 @@ Class Login_model extends CI_Model{
     
     
     
-    
-    function ativar($verificador,$status){
-        $data = array(
-            'status' => $status
-        );
-        
-        $this->db->where('verificador', $verificador);
-        $this->db->update('clientes', $data); 
-
-
-
+    function mostra($id_login){
         $this->db->select('*');
-        $this->db->from('clientes');
-        $this->db->where('verificador', $verificador);
-        
-        $qry = $this->db->get();
-
-        if($qry->num_rows() == 1){
-            $dados = $qry->result();
-
-            $data = array(
-                'verificador' => 'foi ativado'
-            );
-            
-            $this->db->where('id_cliente', $dados[0]->id_cliente);
-            $this->db->update('clientes', $data); 
-            return $dados;
-        }
-        
-    }
-    
-    
-    function mostra($id_cliente){
-        $this->db->select('*');
-        $this->db->from('clientes');
-        $this->db->where('id_cliente', $id_cliente);
+        $this->db->from('login');
+        $this->db->where('id_login', $id_login);
         $this->db->limit(1);
         
         $qry = $this->db->get();
@@ -113,8 +81,8 @@ Class Login_model extends CI_Model{
     }
     
     function compara($email){
-        $this->db->select('id_cliente');
-        $this->db->from('clientes');
+        $this->db->select('id_login');
+        $this->db->from('login');
         $this->db->where('email', $email);
         $this->db->limit(1);
         
@@ -125,7 +93,7 @@ Class Login_model extends CI_Model{
     
     function compara_admin($email){
         $this->db->select('id_usuario');
-        $this->db->from('usuarios');
+        $this->db->from('login');
         $this->db->where('email', $email);
         $this->db->limit(1);
         
@@ -134,61 +102,10 @@ Class Login_model extends CI_Model{
         return $qry->result();
     }
     
-    function cria_recupera($data){     
-        $this->db->insert('cliente_recupera', $data);
-        $insert_id = $this->db->insert_id();
-
-        return  $insert_id;
+    function nova_senha($id_login,$data){
+        $this->db->where('id_login',$id_login);
+        $this->db->update('login',$data);
     }
-    
-    function envia($email, $insert_id){
-        $this->db->select('id_cliente, recupera');
-        $this->db->from('cliente_recupera');
-        $this->db->where('id_cliente_recupera', $insert_id);
-        $this->db->where('email', $email);
-        
-        return $this->db->get()->row();
-    }
-    
-    function troca_senha($id_cliente, $recupera){
-        $this->db->select('cliente_recupera.id_cliente');
-        $this->db->from('clientes');
-        $this->db->join('cliente_recupera', 'clientes.id_cliente = cliente_recupera.id_cliente');
-        $this->db->where('cliente_recupera.id_cliente', $id_cliente);
-        $this->db->where('recupera', $recupera);
-        
-        $query = $this->db->get();
-        return $query->result();
-    }
-    
-    function nova_senha($id_cliente,$data){
-        $this->db->where('id_cliente',$id_cliente);
-        $this->db->update('clientes',$data);
-    }
-    
-    function nova_senha_admin($id_usuario,$data){
-        $this->db->where('id_usuario',$id_usuario);
-        $this->db->update('usuarios',$data);
-    }
-    
-    function verifica_recupera($id_cliente,$codigo){
-        $this->db->select('*');
-        $this->db->from('cliente_recupera');
-        $this->db->where('id_cliente',$id_cliente);
-        $this->db->where('recupera',$codigo);
-        
-        $query = $this->db->get();
-        return $query->result();
-    }
-    
-    function deleta_troca($id_cliente){
-        $this->db->where('id_cliente',$id_cliente);
-        $this->db->delete('cliente_recupera');
-    }
-    
-    function ultimo_acesso($email,$data){
-        $this->db->where('email',$email);
-        $this->db->update('clientes',$data);
-    }
+     
         
 }

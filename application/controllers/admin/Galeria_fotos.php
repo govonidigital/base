@@ -3,6 +3,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Galeria_fotos extends CI_Controller {
 
+    private function verifica_sessao(){
+    
+        if(!$this->session->userdata('id_usuario')){
+            //print "<script type=\"text/javascript\">alert('Sessão expirou, você deve se logar novamente!');</script>";
+            //If no session, redirect to login page
+            redirect('admin/login', 'refresh');
+        }else{
+            return true;
+        }
+        
+        return true;
+    }
+
+    public function __construct(){
+
+        parent::__construct();
+        if ($this->verifica_sessao()){
+
+        }
+
+    }
+
 
 	public function lista(){
 
