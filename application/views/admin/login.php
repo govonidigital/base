@@ -36,8 +36,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body class="text-center">
  
 <form class="form-signin" id="form_validate_login" action="<?php echo base_url(); ?>admin/login/loga" method="post">
-  <img class="mb-4" src="" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Tela de login</h1>
+  <img class="img-fluid mb-4" src="<?php echo base_url('assets/img/logo.png'); ?>">
+  <h1 class="h3 mb-3 font-weight-normal">Login</h1>
   <label for="email" class="sr-only">E-mail</label>
   <input type="email" id="email" class="form-control" placeholder="Email" required autofocus>
   <label for="senha" class="sr-only">Senha</label>

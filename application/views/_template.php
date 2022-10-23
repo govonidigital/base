@@ -28,32 +28,87 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <script src="<?php echo base_url('assets/js/jquery.js');?>"></script>
         <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js');?>"></script>
+
+        <style>
+            .topo{
+                background-color:red;
+                color:white;
+            }
+
+            .topo a{
+                color:white;
+            }
+
+            .nav-link{
+                color:white!important;
+            }
+
+            .rodape{
+                background-color:red;
+                color:white;
+            }
+
+            .rodape a{
+                color:white;
+            }
+        </style>
         
 </head>
 <body>
 
-<div class='container'>
-    <div class='row'>
-        <div class='col-12'>
-            topo
+<div class='topo'>
+    <div class='container'>
+        <div class='row py-3'>
+            <div class='col-12 col-md-2 justify-content-center align-self-center'>
+                <img src='<?php echo base_url('assets/img/logo.png'); ?>' class='img-fluid'>
+            </div>
+            <div class='col-12 col-md-10 justify-content-center align-self-center'>
+                <nav class="navbar navbar-expand-lg navbar-light">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('') ?>">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('blog') ?>">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('galeria') ?>">Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('contato') ?>">Contato</a>
+                        </li>
+
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
 </div>
-
 
 
 <?php echo $contents;?>
 
 
-
-<div class='container'>
-    <div class='row'>
-        <div class='col-12'>
-            rodape
+<div class='rodape'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-12'>
+                rodape
+            </div>
         </div>
     </div>
-</div>
-                   
+</div>                   
 
 
 </body>
