@@ -39,9 +39,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <img class="img-fluid mb-4" src="<?php echo base_url('assets/img/logo.png'); ?>">
   <h1 class="h3 mb-3 font-weight-normal">Login</h1>
   <label for="email" class="sr-only">E-mail</label>
-  <input type="email" id="email" class="form-control" placeholder="Email" required autofocus>
+  <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
   <label for="senha" class="sr-only">Senha</label>
-  <input type="password" id="senha" class="form-control" placeholder="Senha" required>
+  <input type="password" name="senha" class="form-control" placeholder="Senha" required>
   <div class="mb-3">
     <a href="<?php echo base_url(); ?>admin/login/recuperarsenha" class="forPassword"> Esqueceu sua senha?</a>
   </div>
