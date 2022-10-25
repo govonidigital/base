@@ -1,10 +1,10 @@
 <?php
-Class Login_model extends CI_Model{
+Class Usuarios_model extends CI_Model{
     
     
     function loga($email, $senha){
         $this->db->select('*');
-        $this->db->from('login');
+        $this->db->from('usuarios');
         $this->db->where('email', $email);
         $this->db->where('senha', MD5($senha));
         $this->db->limit(1);
@@ -22,17 +22,17 @@ Class Login_model extends CI_Model{
     
     function cadastro($dados){
 
-        $this->db->insert('login', $dados);
+        $this->db->insert('usuarios', $dados);
 
         return true;
         
 
     }
     function inclui($data){
-        $this->db->insert('login',$data);
+        $this->db->insert('usuarios',$data);
 
         $retorno = array( 
-            'id_login'   => $this->db->insert_id(),
+            'id_usuario'   => $this->db->insert_id(),
             'sql'         => $this->db->last_query()
         );
 
@@ -40,15 +40,15 @@ Class Login_model extends CI_Model{
 
     }
     
-    function edita($id_login,$dados){
-        $this->db->where('id_login',$id_login);
-        $this->db->update('login',$dados);
+    function edita($id_usuario,$dados){
+        $this->db->where('id_usuario',$id_usuario);
+        $this->db->update('usuarios',$dados);
     }
     
     function consulta($email){
         
         $this->db->select('*');
-        $this->db->from('login');
+        $this->db->from('usuarios');
         $this->db->where('email', $email);
 
         $this->db->limit(1);
@@ -65,10 +65,10 @@ Class Login_model extends CI_Model{
     
     
     
-    function mostra($id_login){
+    function mostra($id_usuario){
         $this->db->select('*');
-        $this->db->from('login');
-        $this->db->where('id_login', $id_login);
+        $this->db->from('usuarios');
+        $this->db->where('id_usuario', $id_usuario);
         $this->db->limit(1);
         
         $qry = $this->db->get();
@@ -81,8 +81,8 @@ Class Login_model extends CI_Model{
     }
     
     function compara($email){
-        $this->db->select('id_login');
-        $this->db->from('login');
+        $this->db->select('id_usuario');
+        $this->db->from('usuarios');
         $this->db->where('email', $email);
         $this->db->limit(1);
         
@@ -93,7 +93,7 @@ Class Login_model extends CI_Model{
     
     function compara_admin($email){
         $this->db->select('id_usuario');
-        $this->db->from('login');
+        $this->db->from('usuarios');
         $this->db->where('email', $email);
         $this->db->limit(1);
         
@@ -102,9 +102,9 @@ Class Login_model extends CI_Model{
         return $qry->result();
     }
     
-    function nova_senha($id_login,$data){
-        $this->db->where('id_login',$id_login);
-        $this->db->update('login',$data);
+    function nova_senha($id_usuario,$data){
+        $this->db->where('id_usuario',$id_usuario);
+        $this->db->update('usuarios',$data);
     }
      
         

@@ -16,7 +16,7 @@
                         <section id="pagination">
                             <div class="row">
                                 <div class="col-md-12"><br />
-                                    <a class="btn btn-info" style="padding-left: 30px; padding-right: 30px;" href="<?php echo base_url('admin/noticias/noticia_novo'); ?>">Novo</a><br /><br />
+                                    <a class="btn btn-info" style="padding-left: 30px; padding-right: 30px;" href="<?php echo base_url('admin/blog/blog_novo'); ?>">Novo</a><br /><br />
                                 </div>
                             </div>
                             <?php echo"
@@ -25,7 +25,7 @@
                                     <table class='table table-striped'>
                                         <tr>
                                             <th>
-                                                Noticia
+                                                Blog
                                             </th>
                                             <th>
                                                 Resumo
@@ -37,13 +37,13 @@
                                                 Ações
                                             </th>
                                         </tr>
-                                        "; foreach($noticias as $no):
+                                        "; foreach($blog as $bl):
                                             echo "<tr>
-                                            <td>$no->nome</td>
-                                            <td>$no->resumo</td>
-                                            <td>$no->data</td>
-                                            <td><a href='".base_url('admin/noticias/noticia_edita')."/$no->id_noticia' class='btn btn-primary btn-sm'>Editar</a>&nbsp;
-                                            <a href='#' data-id_noticia='".$no->id_noticia."' class='btn btn-danger btn-sm deletar'>Deletar</a></td></tr>";
+                                            <td>$bl->nome</td>
+                                            <td>$bl->resumo</td>
+                                            <td>$bl->data</td>
+                                            <td><a href='".base_url('admin/blog/blog_edita')."/$bl->id_blog' class='btn btn-primary btn-sm'>Editar</a>&nbsp;
+                                            <a href='#' data-id_blog='".$bl->id_blog."' class='btn btn-danger btn-sm deletar'>Deletar</a></td></tr>";
                                         endforeach;
                                         echo "
                                     </table>
@@ -86,10 +86,10 @@
     $(document).ready(function(){
         $('.deletar').click(function(e){
             e.preventDefault();
-            var id_noticia = $(this).attr('data-id_noticia');
+            var id_blog = $(this).attr('data-id_blog');
             $('#modalExcluir').modal('show');
             $('#btnExcluir').click(function(){
-                window.location.href = "<?php echo base_url('admin/noticias/noticia_deleta'); ?>"+"/"+id_noticia;
+                window.location.href = "<?php echo base_url('admin/blog/blog_deleta'); ?>"+"/"+id_blog;
             });
         });
     });

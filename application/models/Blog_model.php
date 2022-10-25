@@ -1,10 +1,10 @@
 <?php
-Class Noticias_model extends CI_Model{
+Class Blog_model extends CI_Model{
     
     function lista(){
     
        $this ->db->select('*');
-       $this ->db->from('noticias');
+       $this ->db->from('blog');
        $this ->db->order_by('nome');
        
        $qry = $this->db->get();
@@ -13,20 +13,20 @@ Class Noticias_model extends CI_Model{
     }
     
     
-    function noticias_novo($data){
-        $this->db->insert('noticias',$data);
+    function blog_novo($data){
+        $this->db->insert('blog',$data);
 
         $retorno = array( 
-            'id_noticia'   => $this->db->insert_id(),
+            'id_blog'   => $this->db->insert_id(),
             'sql'         => $this->db->last_query()
         );
 
         return $retorno;  
     }
     
-    function noticias_edita_salva($id_noticia,$data){
-        $this->db->where('id_noticia', $id_noticia);
-        $this->db->update('noticias', $data);
+    function blog_edita_salva($id_blog,$data){
+        $this->db->where('id_blog', $id_blog);
+        $this->db->update('blog', $data);
 
         $retorno = array(  
             'sql'       => $this->db->last_query()
@@ -36,9 +36,9 @@ Class Noticias_model extends CI_Model{
         
     }
     
-    function noticias_deleta($data){
-        $this->db->where('id_noticia',$data);
-        $this->db->delete('noticias');
+    function blog_deleta($data){
+        $this->db->where('id_blog',$data);
+        $this->db->delete('blog');
         
         $retorno = array(  
             'sql'       => $this->db->last_query()
@@ -47,10 +47,10 @@ Class Noticias_model extends CI_Model{
         return $retorno;  
     }
     
-    function ver($id_noticia){    
+    function ver($id_blog){    
         $this->db->select('*');
-        $this->db->from('noticias');
-        $this->db->where('id_noticia', $id_noticia);
+        $this->db->from('blog');
+        $this->db->where('id_blog', $id_blog);
 
         $qry = $this->db->get();
         

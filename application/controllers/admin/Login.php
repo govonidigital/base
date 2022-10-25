@@ -16,12 +16,12 @@ class Login extends CI_Controller {
 	 // LOGAR USUARIO
 	 public function loga(){
         
-        $this->load->model('login_model');
+        $this->load->model('usuarios_model');
         
         $email = $this->input->post('email');
         $senha = $this->input->post('senha');
         
-	    $dados['email'] = $this->login_model->loga($email,$senha);
+	    $dados['email'] = $this->usuarios_model->loga($email,$senha);
         if ($dados['email'] == ''){
             
             redirect('admin/login', 'refresh');
@@ -37,7 +37,7 @@ class Login extends CI_Controller {
     }
 
     public  function incluilogin(){
-        $this->load->model('login_model');
+        $this->load->model('usuarios_model');
         
         $data = array(
         'email' => $this->input->post('email'),
@@ -45,7 +45,7 @@ class Login extends CI_Controller {
         'ativo' => 'SIM'
         );
         
-        $retorno = $this->login_model->novo($data);
+        $retorno = $this->usuarios_model->novo($data);
           
         redirect('admin/login','refresh');
     }
@@ -56,10 +56,10 @@ class Login extends CI_Controller {
     
     public function recupera_senha(){
 
-        $this->load->model('login_model');
+        $this->load->model('usuarios_model');
         
         $email_user = $this->input->post('email');
-        $id = $this->login_model->compara_admin($email_user);
+        $id = $this->usuarios_model->compara_admin($email_user);
         
         
         
@@ -71,7 +71,7 @@ class Login extends CI_Controller {
                     'senha' => $nova_senha,
                 );
                 
-                $this->login_model->nova_senha($id,$data);
+                $this->usuarios_model->nova_senha($id,$data);
                 
         
         }

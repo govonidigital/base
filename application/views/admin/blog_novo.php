@@ -4,16 +4,16 @@
         padding-right: 10px;
     }
 </style>
-<?php foreach ($noticias as $no){} ?>
+<?php foreach ($blog as $bl){} ?>
 <div class='container-fluid'>
     <div class="row">
         <div class="col-12"><br /><br />
-            <form action="<?php echo base_url('admin/noticias/noticia_novo_salva'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo base_url('admin/blog/blog_novo_salva'); ?>" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12 col-md-2"></div>
                 <div class="col-12 col-md-4">
                     <label for="nome">Nome
-                    <i class="fas fa-question-circle" title="Nome da notícia."></i>
+                    <i class="fas fa-question-circle" title="Nome do Blog."></i>
                     </label>
                     <input type="text" class="form-control" id="nome" name="nome"/><br />
                     <br />
