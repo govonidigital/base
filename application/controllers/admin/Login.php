@@ -23,7 +23,7 @@ class Login extends CI_Controller {
         
 	    $dados['email'] = $this->usuarios_model->loga($email,$senha);
         if ($dados['email'] == ''){
-            
+             $this->session->set_flashdata('error', 'Usuário ou senha inválidos');    
             redirect('admin/login', 'refresh');
         }else{
             redirect('admin/principal', 'refresh');

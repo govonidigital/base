@@ -10,6 +10,10 @@ class Galeria extends CI_Controller {
 		$data['seo_description'] = '';
 		$data['seo_keywords'] = '';
 
+		$this->load->model('galeria_model');
+       
+        $data['galerias'] = $this->galeria_model->lista();
+
 		$this->template->load('_template','galeria', $data);
 	}
 }

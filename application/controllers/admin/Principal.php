@@ -5,8 +5,8 @@ class Principal extends CI_Controller {
 
 	private function verifica_sessao(){
     
-        if(!$this->session->userdata('id_usuario')){
-            //print "<script type=\"text/javascript\">alert('Sessão expirou, você deve se logar novamente!');</script>";
+        if(!$this->session->userdata('logado')){
+            print "<script type=\"text/javascript\">alert('Sessão expirou, você deve se logar novamente!');</script>";
             //If no session, redirect to login page
             redirect('admin/login', 'refresh');
         }else{
