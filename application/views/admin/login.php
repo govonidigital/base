@@ -40,16 +40,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <h1 class="h3 mb-3 font-weight-normal">Login</h1>
   <label for="email" class="sr-only">E-mail</label>
   <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
+  <br>
   <label for="senha" class="sr-only">Senha</label>
   <input type="password" name="senha" class="form-control" placeholder="Senha" required>
   <div class="mb-3">
     <a href="<?php echo base_url(); ?>admin/login/recuperarsenha" class="forPassword"> Esqueceu sua senha?</a>
   </div>
-  <div class="mb-3">
-    <a href="<?php echo base_url(); ?>admin/login/novologin" class="forPassword"> Criar conta !</a>
-  </div>
+  <!--<div class="mb-3">
+    <a href="<?php // echo base_url(); ?>admin/login/novologin" class="forPassword"> Criar conta !</a>
+  </div> -->
   <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+  <p class="mt-5 mb-3 text-muted">&copy; Govoni Soluções 2022</p>
 </form>
 
 </body>

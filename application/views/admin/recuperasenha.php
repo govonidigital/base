@@ -36,13 +36,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body class="text-center">
  
 <form class="form-signin" id="form_validate_login" action="<?php echo base_url(); ?>admin/login/recupera_senha" method="post">
-  <img class="mb-4" src="" alt="" width="72" height="72">
+  <img class="img-fluid mb-4" src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo">
   <h1 class="h3 mb-3 font-weight-normal">Recupere a senha</h1>
   <label for="email" class="sr-only">E-mail de recuperação</label>
   <input type="email" id="email" class="form-control" placeholder="Email" required autofocus>
   <br>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+  <p class="mt-5 mb-3 text-muted">&copy;  Govoni Soluções 2022</p>
 </form>
 
 </body>

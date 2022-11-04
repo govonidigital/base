@@ -97,6 +97,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 
+
+        <!--------------------- BANNER -------------------->
+<?php 
+    if(!empty($banners)){
+        if($this->uri->segment(1) == 'Principal' or $this->uri->segment(1) == ''){
+            echo "
+            <div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
+            <div class='carousel-inner'>";
+    
+            foreach($banners as $b){
+                //escrever o código para exibir os banners
+                echo "
+                <div class='carousel-item active'>
+                    <img class='d-block w-100' src='".base_url('assets/img/banner/'.$b->imagem)."' alt='First slide'>
+                </div>
+                ";
+            }
+            echo "
+            </div>
+                <a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
+                    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                    <span class='sr-only'>Previous</span>
+                </a>
+                <a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
+                    <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                    <span class='sr-only'>Next</span>
+                </a>
+            </div>";
+        }
+    }
+ ?>
+        
+        <!--------------------- BANNER -------------------->
+
 <?php echo $contents;?>
 
 
