@@ -1,0 +1,139 @@
+.cookie-modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    letter-spacing: 0.8px;
+  }
+  .cookie-modal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    border-left: 12px solid #343a40;
+  }
+
+  .cookie-content {
+
+    font-size: 13px;
+  }
+  
+  .cookie-close {
+    background-color: #343a40;
+    color: white !important;
+    font-size: 22px;
+    transition: 0.5s;
+    margin: auto 12px;
+    padding: 6px 12px;
+    border: 1px solid #343a40;
+    border-radius: 3px;
+  }
+  
+  .cookie-close:hover,
+  .cookie-close:focus {
+    text-decoration: none;
+    cursor: pointer;
+    color: #343a40 !important;
+    background-color: white;
+  }
+  
+  .cookie-modal-header {
+    padding: 2px 36px;
+    background-color: #fff;
+    color: black;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 8px;
+  }
+  
+  .cookie-modal-body {
+    padding: 2px 48px;
+    display: flex;
+  }
+  
+  .cookie-modal-footer {
+    padding: 2px 24px;
+    background-color: #fff;
+    color: black;
+    margin-bottom: 12px;
+  }
+  
+  .cookie-footer-item > a {
+    margin: 0 8px;
+    color: #343a40 !important;
+  }
+  
+  @-webkit-keyframes slideIn {
+    from {
+      bottom: -300px;
+      opacity: 0;
+    }
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      bottom: -300px;
+      opacity: 0;
+    }
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .cookie-modal-body {
+      display: block;
+    }
+  
+    .cookie-modal-header {
+      margin-bottom: 0px;
+    }
+    .cookie-close {
+      color: #343a40;
+      font-size: 24px;
+      transition: 0.5s;
+      border: 1px solid #343a40;
+      border-radius: 5px;
+      margin-left: 0px;
+    }
+  
+    .cookie-modal-footer {
+      margin-top: 12px;
+    }
+  }
