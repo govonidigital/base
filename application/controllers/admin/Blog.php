@@ -86,7 +86,7 @@ class blog extends CI_Controller {
             'resumo' => $this->input->post('resumo'),
             'texto' => $this->input->post('texto')
         );
-        
+
         
         $retorno = $this->blog_model->blog_edita_salva($this->input->post('id_blog'),$data);
         

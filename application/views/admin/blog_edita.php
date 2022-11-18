@@ -35,7 +35,7 @@
                 <div class="col-12 col-md-2"></div>
                 <div class="col-12 col-md-8">
                     <label for="texto">Texto</label>
-                    <textarea class="form-control" id="texto"  name="texto" value="<?php echo $bl->texto; ?>" rows="4"></textarea>
+                    <textarea class="form-control" id="texto"  name="texto" rows="4"><?php echo $bl->texto; ?></textarea>
                 </div>
                 <div class="col-12 col-md-2"></div>
             </div>
