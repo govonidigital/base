@@ -28,6 +28,9 @@
                                                 Blog
                                             </th>
                                             <th>
+                                                Imagem
+                                            </th>
+                                            <th>
                                                 Resumo
                                             </th>
                                             <th>
@@ -40,6 +43,7 @@
                                         "; foreach($blog as $bl):
                                             echo "<tr>
                                             <td>$bl->nome</td>
+                                            <td><img src='".base_url('assets/img/blog/')."$bl->imagem' style='height: 40px; width: auto;'/></td>
                                             <td>$bl->resumo</td>
                                             <td>$bl->data</td>
                                             <td><a href='".base_url('admin/blog/blog_edita')."/$bl->id_blog' class='btn btn-primary btn-sm'>Editar</a>&nbsp;

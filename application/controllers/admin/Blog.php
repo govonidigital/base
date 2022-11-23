@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class blog extends CI_Controller {
+class Blog extends CI_Controller {
 
     private function verifica_sessao(){
     
@@ -52,6 +52,14 @@ class blog extends CI_Controller {
     
     function blog_novo_salva(){
         $this->load->model('blog_model');
+
+        $config['upload_path']          = './assets/img/blog/';
+        $config['allowed_types']        = 'JPG|PNG|JPEG|jpg|png|jpeg';
+        $config['encrypt_name']        = true;
+
+        
+        $this->load->library('upload');
+        $this->upload->initialize($config);
         
         
         $data = array(
@@ -60,6 +68,30 @@ class blog extends CI_Controller {
             'resumo' => $this->input->post('resumo'),
             'texto' => $this->input->post('texto')
         );
+
+
+        if ($this->upload->do_upload('imagem')){
+            $upload_data = $this->upload->data(); //Returns array of containing all of the data related to the file you uploaded.
+            $file_name = $upload_data['file_name'];
+            $data = $data + array('imagem' => $file_name);
+
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = "./assets/img/blog/$file_name";
+            $config['maintain_ratio'] = TRUE;
+            $config['width']         = 1600;
+
+            $this->load->library('image_lib', $config);
+
+            $this->image_lib->resize();
+
+        }else{
+            echo $this->upload->display_errors();
+
+            $data['upload_data'] = $this->upload->data();
+            echo  $data['upload_data']['file_name'];
+
+
+        }
         
         
         $retorno = $this->blog_model->blog_novo($data);
@@ -78,7 +110,15 @@ class blog extends CI_Controller {
     
     public function blog_edita_salva(){
         $this->load->model('blog_model');
+
+        $config['upload_path']          = './assets/img/blog/';
+        $config['allowed_types']        = 'jpg|png|jpeg';
+        $config['encrypt_name']        = 'true';
+        $config['max_size']             = 2000;
+        $config['max_width']            = 2000;
+        $config['max_height']           = 1000;
         
+        $this->load->library('upload', $config);
         
         $data = array(
             'data' => $this->input->post('data'),
@@ -87,6 +127,13 @@ class blog extends CI_Controller {
             'texto' => $this->input->post('texto')
         );
 
+        if ($this->upload->do_upload('imagem')){
+            $upload_data = $this->upload->data(); //Returns array of containing all of the data related to the file you uploaded.
+            $file_name = $upload_data['file_name'];
+            $data = $data + array('imagem' => $file_name);  
+        }
+        
+        
         
         $retorno = $this->blog_model->blog_edita_salva($this->input->post('id_blog'),$data);
         

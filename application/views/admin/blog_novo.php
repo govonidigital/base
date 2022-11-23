@@ -28,6 +28,10 @@
                     <i class="fas fa-question-circle" title="Descrição simples do assunto."></i>
                     </label>
                     <input type="text" class="form-control" id="resumo" name="resumo"/><br /><br />
+                    <label for="imagem">Imagem
+                    <i class="fas fa-question-circle" title="A dimensão das imagens deve ser de no máximo 2000x1000px, e o tamanho máximo de 2MB"></i>
+                    </label><br/>
+                    <input type="file" name="imagem" id="imagem"/><br />
                 </div>
                 <div class="col-12 col-md-2"></div>
             </div>
