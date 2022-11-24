@@ -147,6 +147,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>            
 
     <!--Cookie -->
+    <?php 
+
+    if ($cookie_lgpd == true){ ?>
+        
     <div id="my-cookie-modal" class="cookie-modal">
     <div class="cookie-modal-content">
     <!--Caso queira colocar o titulo <div class="cookie-modal-header">
@@ -168,6 +172,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
     </div>
+    <?php } ?>
     <!--Cookie -->
 
 </body>

@@ -6,6 +6,9 @@ class Galeria_fotos extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->library('base');
+		$data = $this->base->site();
+
 		$data['seo_title'] = '';
 		$data['seo_description'] = '';
 		$data['seo_keywords'] = '';
@@ -18,6 +21,9 @@ class Galeria_fotos extends CI_Controller {
 	}
 
 	public function lista(){
+
+		$this->load->library('base');
+		$data = $this->base->site();
 
         $this->load->model('galeria_fotos_model');
         $data['galeria_fotos'] = $this->galeria_fotos_model->lista_galeria_fotos($this->uri->segment(3));
