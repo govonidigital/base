@@ -64,7 +64,8 @@ class Banners extends CI_Controller {
         
         $data = array(
         'link' => $this->input->post('link'),
-        'ativo' => $this->input->post('ativo')
+        'ativo' => $this->input->post('ativo'),
+        'tipo' => $this->input->post('tipo')
         );
         
         if ($this->upload->do_upload('imagem')){
@@ -120,7 +121,8 @@ class Banners extends CI_Controller {
         
         $data = array(
         'link' => $this->input->post('link'),
-        'ativo' => $this->input->post('ativo')
+        'ativo' => $this->input->post('ativo'),
+        'tipo' => $this->input->post('tipo')
         );
         
         if ($this->upload->do_upload('imagem')){

@@ -18,6 +18,14 @@
                     <input type="text" class="form-control" id="link" name="link" value="<?php echo $ba->link; ?>"/><br />
                     
                     <br />
+                    <label for="tipo">Tipo
+                    <i class="fas fa-question-circle" title="Escolha se o banner aparecerá em telas de PC ou de celular."></i>
+                    </label>
+                    <select class="form-control" id="tipo" name="tipo">
+                        <option value="PC" <?php if ($ba->tipo == 'PC') echo " selected='selected'" ?>>PC</option>
+                        <option value="MOBILE" <?php if ($ba->tipo == 'MOBILE') echo " selected='selected'" ?>>MOBILE</option>
+                        <option value="AMBOS" <?php if ($ba->tipo == 'AMBOS') echo " selected='selected'" ?>>AMBOS</option>
+                    </select><br />
                 </div>
                 <div class="col-12 col-md-4">
                     <label for="preco">Ativo
@@ -27,7 +35,6 @@
                         <option value="SIM" <?php if ($ba->ativo == 'SIM') echo " selected='selected'" ?>>SIM</option>
                         <option value="NAO" <?php if ($ba->ativo == 'NAO') echo " selected='selected'" ?>>NÃO</option>
                     </select><br />
-                    
                     <label for="arquivo">Trocar Imagem
                     <i class="fas fa-question-circle" title="A dimensão das imagens deve ser de no máximo 2000x1000px, e o tamanho máximo de 2MB"></i>
                     </label><br/>
