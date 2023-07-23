@@ -174,7 +174,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <?php } ?>
     <!--Cookie -->
+<script>  
+//aqui faz o banner funcionar
+        $('.carousel-item').eq(0).addClass('active');
 
+        $(document).ready(function(){
+        //verifico se eh mobile para colapsar 
+        if( ! /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            
+                $("#collapse2").click();
+            }
+        });
+        </script>  
 </body>
 
 <script src="<?php echo base_url('assets/js/cookie.js');?>"></script>
