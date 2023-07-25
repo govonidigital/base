@@ -10,6 +10,7 @@
         <div class="col-12"><br /><br />
             <form action="<?php echo base_url('admin/blog/blog_edita_salva'); ?>" method="post" enctype="multipart/form-data">
             <div class="row">
+            <input type="hidden" id="id_blog" name="id_blog" value="<?php echo $bl->id_blog; ?>"/>
                 <div class="col-12 col-md-2"></div>
                 <div class="col-12 col-md-4">
                     <label for="nome">Nome

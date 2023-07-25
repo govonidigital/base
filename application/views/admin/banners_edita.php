@@ -11,6 +11,7 @@
             <form action="<?php echo base_url('admin/banners/banner_edita_salva'); ?>" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12 col-md-2"></div>
+                <input type="hidden" id="id_banner" name="id_banner" value="<?php echo $ba->id_banner; ?>"/>
                 <div class="col-12 col-md-4">
                     <label for="link">Link
                     <i class="fas fa-question-circle" title="Página para onde o banner direciona quando clicado. Se não deve levar a nenhuma página, deixe o campo em branco."></i>
