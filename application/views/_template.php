@@ -86,6 +86,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <a class="nav-link" href="<?php echo base_url('galeria') ?>">Galeria</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="<?php echo base_url('leads') ?>">Leads</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="<?php echo base_url('contato') ?>">Contato</a>
                             </li>
 

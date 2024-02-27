@@ -43,36 +43,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 
-<div class='container mb-3'>
-    <div class='row py-2'>
-        <div class='col-2'>
-            <img src='<?php echo base_url('assets/img/logo.png'); ?>' class='img-fluid'>
-        </div>
-        <div class='col-10'>
-        <a href='<?php echo base_url('admin/principal'); ?>'>Principal</a>
-        <a href='<?php echo base_url('admin/galeria'); ?>'>Galeria</a>
-        <a href='<?php echo base_url('admin/banners'); ?>'>Banners</a>
-        <a href='<?php echo base_url('admin/blog'); ?>'>Blog</a>
-        <a href='<?php echo base_url('admin/email'); ?>'>Email</a>
-        <a href='<?php echo base_url('admin/principal'); ?>'>Sair</a>
+<div style='background-color:silver;'>
+    <div class='container mb-3 '>
+        <div class='row py-2'>
+            <div class='col-2'>
+                <img src='<?php echo base_url('assets/img/logo.png'); ?>' class='img-fluid'>
+            </div>
+
+            <div class='col-10 text-right justify-content-center align-self-center'>
+                <a href='<?php echo base_url('admin/principal'); ?>' class='mx-2'>Principal</a>
+                <a href='<?php echo base_url('admin/galeria'); ?>' class='mx-2'>Galeria</a>
+                <a href='<?php echo base_url('admin/banners'); ?>' class='mx-2'>Banners</a>
+                <a href='<?php echo base_url('admin/blog'); ?>' class='mx-2'>Blog</a>
+                <a href='<?php echo base_url('admin/leads'); ?>' class='mx-2'>Leads</a>
+                <a href='<?php echo base_url('admin/email'); ?>' class='mx-2'>Email</a>
+                <a href='<?php echo base_url('admin/principal'); ?>' class='mx-2'>Sair</a>
+            </div>
         </div>
     </div>
 </div>
-
 
 
 <?php echo $contents;?>
 
 
-
-<div class='container'>
-    <div class='row'>
-        <div class='col-12 text-center'>
-            Desenvolvido por <a href='https://www.govoni.com.br' target='_blank'>Govoni Digital</a>
+<div style='background-color:silver;'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-12 text-center py-3'>
+                Desenvolvido por <a href='https://www.govoni.com.br' target='_blank'>Govoni Digital</a>
+            </div>
         </div>
     </div>
-</div>
-                   
+</div>                   
 
 
 </body>
