@@ -51,7 +51,8 @@ foreach ($email as $e){}
 
                 Resolva o cálculo para enviar o formulario<br> <span id="captcha"></span>
             <input type="text" id='validacao' name="validacao" value="">
-            <input type="hidden" id='total' name="total" value=""><button type="button" class="btn btn-secondary">Enviar</button>
+            <input type="hidden" id='total' name="total" value="">
+            <button type="submit" class="btn btn-secondary">Enviar</button>
 
 		</form>
 	</div>

@@ -28,19 +28,13 @@ class Email extends CI_Controller {
     public function index(){
 
 		$this->load->model('email_model');
-       
         $data['email'] = $this->email_model->lista();
+
+        $data['retorno_teste'] = $this->input->get('retorno_teste');
 
         $this->template->load('admin/_template', 'admin/email', $data);
 	}
 
-    public function lista(){ 
-		$this->load->model('email_model');
-       
-        $data['email'] = $this->email_model->lista();
-
-        $this->template->load('admin/_template', 'admin/email', $data);
-    }
     
 
     public function salva(){
@@ -66,6 +60,34 @@ class Email extends CI_Controller {
         redirect('admin/email/lista','refresh');
     }
 
+
+
+
+    public function testar(){
+
+        
+        $this->load->library('email_envia');
+        $ret = $this->email_envia->enviar(
+            $this->input->post('email_teste'),
+            'Teste de configuração',
+            'testando conf'
+        );
+
+        if ($ret['status'] == 'ok'){
+            $retorno = "email enviado com sucesso";
+        }else{
+            $retorno = "Erro: " . $ret['mensagem'];
+        }
+
+
+        redirect('admin/email?retorno_teste='.$retorno,'refresh');
+
+
+        
+
+
+
+    }
 
 
 }

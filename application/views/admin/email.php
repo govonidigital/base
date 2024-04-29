@@ -16,6 +16,17 @@
                                     <div class="col-12" style="padding-bottom: 10px; padding-top: 10px;">
                                         <center>
                                             <h3>Configurações da Loja Virtual</h3>
+                                            
+                                            <?php 
+                                            if (isset($retorno_teste)){
+                                                echo "
+                                                <div class='alert alert-info' role='alert'>
+                                                $retorno_teste
+                                                </div>
+                                                ";
+                                            } 
+                                            ?>
+                                            
                                         </center>
                                         <hr/>
                                     </div>
@@ -67,5 +78,26 @@
 
          </div>
     </div>
+
+
+
+
+<div class='row'>
+    <div class='col-12 text-center py-3 mt-3'>
+        <hr>
+        <h3>Testar envio de email</h3>
+        <form action="<?php echo base_url('admin/email/testar');?>" method='post'>
+        <input type='text' value='' name='email_teste' placeholder='Email que vai receber o teste'>
+        <input type='submit' value='Testar'>
+        </form>
+
+        
+
+    </div>
+</div>
+
+
+
+
 </div>
 
