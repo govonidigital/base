@@ -25,54 +25,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>"/>
         <link href="<?php echo base_url('assets/fontawesome/css/all.css');?>" rel="stylesheet"/>
         <link rel="stylesheet" href="<?php echo base_url('assets/css/cookie.css');?>"/>
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/estilo.css');?>"/>
 
 
         <script src="<?php echo base_url('assets/js/jquery.js');?>"></script>
         <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js');?>"></script>
-
-        <style>
-            .topo{
-                background-color:#e5dadd;
-                color:black;
-            }
-
-            .topo a{
-                color:black;
-            }
-
-            .nav-link{
-                color:black!important;
-            }
-
-            .rodape{
-                background-color:#e5dadd;
-                color:black;
-            }
-
-            .rodape a{
-                color:black;
-            }
-        </style>
-        
 </head>
 
 <body>
 
-    <div class='topo'>
-        <div class='container'>
-            <div class='row py-3'>
-                <div class='col-12 col-md-2 justify-content-center align-self-center'>
-                    <img src='<?php echo base_url('assets/img/logo.png'); ?>' class='img-fluid'>
-                </div>
-                <div class='col-12 col-md-10 justify-content-center align-self-center'>
-                    <nav class="navbar navbar-expand-lg navbar-light">
-
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ml-auto">
+<div class='topo'>
+    <div class='container'>
+        <div class='row justify-content-between align-items-center py-3'>
+            <div class='col-md-3 col-8'>
+                <a href="<?php echo base_url('Principal') ?>"><img src='<?php echo base_url('assets/img/logo.png'); ?>' class="logo"></a>
+            </div>
+            <div class='col-md-9 col-4'>
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo base_url('') ?>">Principal</a>
                             </li>
@@ -91,92 +65,159 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo base_url('contato') ?>">Contato</a>
                             </li>
-
-                            </ul>
-
-                        </div>
-                    </nav>
-                </div>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
+</div>
+
 
 
 
     <!--------------------- BANNER -------------------->
-    <?php 
-        if(!empty($banners)){
-            if($this->uri->segment(1) == 'Principal' or $this->uri->segment(1) == ''){
-                echo "
-                <div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
-                <div class='carousel-inner'>";
-        
-                foreach($banners as $b){
-                    //escrever o código para exibir os banners
-                    echo "
-                    <div class='carousel-item active'>
-                        <img class='d-block w-100' src='".base_url('assets/img/banner/'.$b->imagem)."' alt='First slide'>
-                    </div>
-                    ";
-                }
-                echo "
-                </div>
-                    <a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>
-                        <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                        <span class='sr-only'>Previous</span>
-                    </a>
-                    <a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>
-                        <span class='carousel-control-next-icon' aria-hidden='true'></span>
-                        <span class='sr-only'>Next</span>
-                    </a>
-                </div>";
+  <!--------------------- BANNER -------------------->
+
+  <?php
+// Banner for PC
+if (!empty($banners)) {
+    if ($this->uri->segment(1) == 'Principal' || $this->uri->segment(1) == '') {
+        echo "<div class='d-none d-md-block'>
+                    <div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
+                        <ol class='carousel-indicators'>";
+
+        $i = 0;
+        foreach ($banners as $b) {
+            if ($b->tipo == 'PC' || $b->tipo == 'AMBOS') {
+                $active = $i == 0 ? 'active' : '';
+                echo "<li data-target='#carouselExampleControls' data-slide-to='$i' class='$active'></li>";
+                $i++;
             }
         }
-    ?>
+
+        echo "</ol>
+                        <div class='carousel-inner'>";
+
+        $i = 0;
+        foreach ($banners as $b) {
+            if ($b->tipo == 'PC' || $b->tipo == 'AMBOS') {
+                $active = $i == 0 ? 'active' : '';
+                echo "<div class='carousel-item $active'>
+                                          <a href='" . $b->link . "'>
+                                              <img src='" . base_url('assets/img/banner/' . $b->imagem) . "' class='d-none d-md-block w-100' alt=''>
+                                          </a>
+                                        </div>";
+                $i++;
+            }
+        }
+
+        echo "</div>
+                      </div>
+                    </div>";
+    }
+}
+
+// Banner for Mobile
+if (!empty($banners)) {
+    if ($this->uri->segment(1) == 'Principal' || $this->uri->segment(1) == '') {
+        echo "<div class='d-block d-md-none'>
+                          <div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>
+                              <ol class='carousel-indicators'>";
+
+        $i = 0;
+        foreach ($banners as $b) {
+            if ($b->tipo == 'MOBILE' || $b->tipo == 'AMBOS') {
+                $active = $i == 0 ? 'active' : '';
+                echo "<li data-target='#carouselExampleControls' data-slide-to='$i' class='$active'></li>";
+                $i++;
+            }
+        }
+
+        echo "</ol>
+                              <div class='carousel-inner'>";
+
+        $i = 0;
+        foreach ($banners as $b) {
+            if ($b->tipo == 'MOBILE' || $b->tipo == 'AMBOS') {
+                $active = $i == 0 ? 'active' : '';
+                echo "<div class='carousel-item $active'>
+                                                <a href='" . $b->link . "'>
+                                                  <img src='" . base_url('assets/img/banner/' . $b->imagem) . "' class='d-block d-md-none w-100' alt='...'>
+                                                </a>
+                                              </div>";
+                $i++;
+            }
+        }
+
+        echo "</div>
+                      </div>
+                    </div>";
+    }
+}
+?>
+
         
     <!--------------------- BANNER -------------------->
-
-    <?php echo $contents;?>
+    <div class="main-content">
+        <?php echo $contents;?>
+    </div>
+    
 
     <!--------------------- RODAPE -------------------->
-    <div class='rodape'>
-        <div class='container'>
-            <div class='row'>
-                <div class="col-12 text-center">
-                    Desenvolvido por <a target='_blank' href="http://www.govoni.com.br">Govoni Soluções Digitais</a>
+  
+    <div class="footer"><hr />
+      <div class="container">
+        <div class="row justify-content-center p-3">
+            <div class="col-md-4 text-center mb-1">
+                <span>Mapa do Site</span><br />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link" href="<?php echo base_url('') ?>">Principal</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo base_url('quemsomos') ?>">Quem Somos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo base_url('blog') ?>">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link" href="<?php echo base_url('galeria') ?>">Galeria</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo base_url('leads') ?>">Leads</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo base_url('contato') ?>">Contato</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+          <div class="col-md-4 text-center mb-1">
+            <span>Redes Sociais</span><br />
+            <div class="icon-container mt-3">
+              <a href="" target="_blank">
+                <i class="fab fa-whatsapp whatsapp-icon"></i>
+              </a>
+              <a href="" target="_blank">
+                <i class="fab fa-instagram instagram-icon"></i>
+              </a>
+              <a href="" target="_blank">
+                <i class="fab fa-linkedin linkedin-icon"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 text-center mb-1"><span>Newsletter</span></div>
         </div>
-    </div>            
+        <span class="text-center">
+          <center>
+            Desenvolvido por<a href="https://www.govoni.com.br/" target="_blank"> Govoni Marketing Digital</a> -  Todos os direitos reservados &copy;
+          </center>
+        </span>
+      </div>
+    </div>
+  
+   
+       
 
     <!--Cookie -->
-    <?php 
 
-    if ($cookie_lgpd == true){ ?>
-        
-    <div id="my-cookie-modal" class="cookie-modal">
-    <div class="cookie-modal-content">
-    <!--Caso queira colocar o titulo <div class="cookie-modal-header">
-        <p>Cookie Policy</p>
-        </div> -->
-        <div class="cookie-modal-body">
-        <p class="cookie-content m-0">
-            Este site usa cookies para melhorar sua experiência enquanto você navega pelo site. Os cookies são categorizados em “essenciais” e de “mídias”. Os cookies que são categorizados como “essenciais” são armazenados no seu navegador, pois são necessários para o funcionamento das principais funções do site. Estes cookies serão mantidos independentemente de seu consentimento.
-            Também usamos cookies de “mídias” compartilhados com terceiros que nos ajudam a analisar e entender como você usa este site, possibilitando interações futuras com você. Estes cookies serão armazenados em seu navegador apenas com o seu consentimento e você tem a opção de cancelar esses cookies acessando os detalhes de nossa política. Contudo, importante informar que a desativação de alguns desses cookies poderá afetar sua experiência de navegação.”
-            Detalhe sobre cookies essenciais: Os cookies “essenciais” são absolutamente necessários para o funcionamento adequado do site. Esta categoria inclui apenas cookies que garantem funcionalidades básicas e recursos de segurança do site. Esses cookies não armazenam nenhuma informação pessoal e serão utilizados independentemente de seu consentimento com respaldo legal.
-            Detalhes sobre cookies de mídia: Quaisquer cookies que possam não ser particularmente necessários (“essenciais”) para o funcionamento do site e sejam usados especificamente para coletar dados pessoais do usuário por meio de análises, anúncios e outros conteúdos incorporados são denominados cookies de “mídia”. Esses cookies somente serão armazenados com o consentimento do usuário.
-        </p>
-        <span class="cookie-close">Prosseguir</span>
-        </div>
-        <div class="cookie-modal-footer">
-        <!--<span class="cookie-footer-item"><a target="_blank" href=""></a></span>-->
-        <span class="cookie-footer-item"><a target="_blank" href="https://goadopt.io/blog/cookies-e-lgpd/">Saiba mais</a></span>
-
-        </div>
-    </div>
-    </div>
-    <?php } ?>
-    <!--Cookie -->
 <script>  
 //aqui faz o banner funcionar
         $('.carousel-item').eq(0).addClass('active');

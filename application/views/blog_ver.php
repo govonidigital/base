@@ -1,11 +1,21 @@
-    <div class="bg-white py-5">
-          <div class="container">
-               <div class="row justify-content-between">
-                    <div class="col-12 col-md-8 col-lg-8 mb-5 mb-md-0">
-                         <p class="text-muted text-monospace small"><?php echo $blog[0]->data ?></p>
-                         <h2><?php echo $blog[0]->nome ?></h2>
-                         <p><?php echo $blog[0]->texto ?></p>
-                    </div>
-               </div>
+<div class="bg-white py-5">
+     <div class='container'>
+          <div class='row'>
+               <?php 
+                    foreach ($blog as $bl){
+                    echo " 
+                    <div class='col-12'>
+                         <img src='" . base_url('assets/img/blog/' . $bl->imagem) . "' class='img-fluid'>
+                         <div class='text-left mt-4'>
+                              <p>$bl->data</p>
+                         </div>
+                              <div class='text-center my-4'>
+                                   <h1>$bl->nome</h1><br>
+                              </div>
+                              $bl->texto</p>
+                    </div>";
+                    }
+               ?>     
           </div>
      </div>
+</div>
