@@ -145,6 +145,53 @@ body {
 /* FIM RODAPÉ */
 
         
+/* GALERIA  */
+
+
+.galeria .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px 4%;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 3px #000;
+    transition: 0.1s;
+}
+
+.galeria .card:hover {
+    transform: scale(1.01);
+}
+
+.galeria .card .card-body {
+    padding: 20px 1%;
+    height: 100%;
+    top: 0;
+}
+
+.galeria p {
+    font-size: 18px;
+    font-weight: 300;
+    color:#000;
+}
+
+.galeria .btnvergaleria button {
+    background-color: #212121;
+    border: 1px solid #212121;
+    border-radius: 5px;
+    padding: 10px 10px;
+    transition: 0.5s;
+    width: 120px;
+    height: auto;
+}
+
+.galeria .btnvergaleria button:hover {
+   transform: scale(1.05);
+}
+
+.galeria .btnvergaleria button a {
+    color: white;
+    text-decoration: none;
+}
 
 
 
@@ -153,6 +200,7 @@ body {
 
 
 
+/* FIM GALERIA */
 
 
 
