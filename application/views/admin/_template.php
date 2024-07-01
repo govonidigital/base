@@ -18,19 +18,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="author" content="Felipe Govoni" />
     <meta name="reply-to" content="contato@govoni.com.br"/>
     <title><?php if (isset($seo_title)){echo $seo_title;}?></title>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/admin.css');?>"/>
     <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>"/>
     <link href="<?php echo base_url('assets/fontawesome/css/all.css');?>" rel="stylesheet"/>
     <script src="<?php echo base_url('assets/js/jquery.js');?>"></script>
     <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js');?>"></script> 
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/admin.css');?>"/>
+    
 <!--<link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
 <script src="<?php echo base_url('vendor/fancyapps/fancybox/source/jquery.fancybox.js');?>"></script>
 <link href="<?php echo base_url('vendor/fancyapps/fancybox/source/jquery.fancybox.css');?>" rel="stylesheet" type="text/css" />-->
 </head>
 <body>
-
-<div style='background-color:silver;'>
-<div class='container'>
+<div style="background-color: #005380;">
+    <div class="text-right mx-5 mt-2 mb-2">
+        <a href="https://wa.me/5551984728718" target="_blank">
+            <i class="fab fa-whatsapp mx-2" style='color:white; font-size:30px;'></i>
+        </a>
+        <a href="https://www.instagram.com/govonidigital/" target="_blank">
+            <i class="fab fa-instagram mx-2" style='color:white; font-size:30px;'></i>
+        </a>
+        <a href="https://www.facebook.com/govonidigital" target="_blank">
+            <i class="fab fa-facebook mx-2" style='color:white; font-size:30px;'></i>
+        </a>
+        <a href="https://www.linkedin.com/company/govonidigital/" target="_blank">
+            <i class="fab fa-linkedin mx-2" style='color:white; font-size:30px;'></i>
+        </a>
+        <a href="https://www.youtube.com/@govoni.digital" target="_blank">
+            <i class="fab fa-youtube mx-2" style='color:white; font-size:30px;'></i>
+        </a>
+    </div>
+</div>
+<div class='topoadmin'>
+    <div class='container'>
         <div class='row justify-content-between align-items-center py-3'>
             <div class='col-md-3'>
                 <a href="<?php echo base_url('Principal') ?>"><img src='<?php echo base_url('assets/img/logo.png'); ?>' class="img-fluid"></a>
@@ -43,28 +62,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                            <a href='<?php echo base_url('admin/principal'); ?>' class='mx-2'>Principal</a>
+                            <a class="nav-link" href='<?php echo base_url('admin/principal'); ?>'>Principal</a>
                             </li>
                             <li class="nav-item">
-                            <a href='<?php echo base_url('admin/galeria'); ?>' class='mx-2'>Galeria</a>
+                            <a class="nav-link" href='<?php echo base_url('admin/galeria'); ?>'>Galeria</a>
                             </li>
                             <li class="nav-item">
-                            <a href='<?php echo base_url('admin/banners'); ?>' class='mx-2'>Banners</a>
+                            <a class="nav-link" href='<?php echo base_url('admin/banners'); ?>'>Banners</a>
                             </li>
                             <li class="nav-item">
-                            <a href='<?php echo base_url('admin/blog'); ?>' class='mx-2'>Blog</a>
+                            <a class="nav-link" href='<?php echo base_url('admin/blog'); ?>'>Blog</a>
                             </li>
                             <li class="nav-item">
-                            <a href='<?php echo base_url('admin/leads'); ?>' class='mx-2'>Leads</a>
+                            <a class="nav-link" href='<?php echo base_url('admin/leads'); ?>' >Leads</a>
                             </li>
                             <li class="nav-item">
-                            <a href='<?php echo base_url('admin/email'); ?>' class='mx-2'>Email</a>
+                            <a class="nav-link" href='<?php echo base_url('admin/email'); ?>' >Email</a>
                             </li>
                             <li class="nav-item">
-                            <a href='<?php echo base_url('admin/usuarios'); ?>' class='mx-2'>Usuarios</a>
+                            <a class="nav-link" href='<?php echo base_url('admin/usuarios'); ?>' >Usuarios</a>
                             </li>
                             <li class="nav-item">
-                            <a href='<?php echo base_url('principal'); ?>' class='mx-2'>Sair</a>
+                            <a class="nav-link" href='<?php echo base_url('principal'); ?>'>Sair</a>
                             </li>
                         </ul>
                     </div>
@@ -78,11 +97,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo $contents;?>
 </div>
 
-<div style='background-color:silver;'>
+<div class="footer">
     <div class='container'>
         <div class='row'>
             <div class='col-12 text-center py-3'>
-                Desenvolvido por <a href='https://www.govoni.com.br' target='_blank'>Govoni Digital</a>
+                <span>Desenvolvido por <a href='https://www.govoni.com.br' target='_blank'>Govoni Marketing Digital</a></span>
             </div>
         </div>
     </div>

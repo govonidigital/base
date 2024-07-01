@@ -10,14 +10,14 @@ body {
 
 /* NAVBAR */
 
-.topo {
-    background-color: #ffffff;
+.topoadmin {
+    background-color: #fff;
     margin: 0;
     top: 0;
 }
 
-.topo .navbar-nav .nav-link {
-    color: black; 
+.topoadmin .navbar-nav .nav-link {
+    color: black!important; 
     font-size: 18px;
     font-weight: 300;
     margin-right: 40px;
@@ -25,22 +25,22 @@ body {
 }
 
 
-.topo .navbar-nav .nav-link:hover {
-    color: black; 
+.topoadmin .navbar-nav .nav-link:hover {
+    color: black!important; 
     font-size: 18px;
     font-weight: 600;
     transform: scale(1.02);
 }
 
 
-.topo .logo {
+.topoadmin .logo {
     max-width: 240px;
     height: auto;
 }
 
 
 @media screen and (max-width: 768px) {
-    .topo .logo {
+    .topoadmin .logo {
         max-width: 100%; 
         height: auto;
     }
@@ -48,7 +48,10 @@ body {
 
 /* FIM NAVBAR */
 
-
+.bemvindo {
+    font-size: 32px;
+    font-weight: 600;
+}
 
 
 

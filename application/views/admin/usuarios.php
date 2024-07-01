@@ -14,7 +14,7 @@
                 <div class="content-wrapper card">
                     <div class="content-body">
                         <section id="pagination">
-                            <div class="row">
+                            <div class="row p-2">
                                 <div class="col-md-12"><br />
                                     <a class="btn btn-info" style="padding-left: 30px; padding-right: 30px;" href="<?php echo base_url('admin/usuarios/novo'); ?>">Novo</a><br /><br />
                                 </div>
