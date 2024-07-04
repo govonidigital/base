@@ -183,12 +183,12 @@ header nav.menu-desktop ul li {
     font-weight: 300;
     padding: 20px 8%;
     display: block;
-    transition: 1s;
+    transition: 0.2s;
 }
 
 .menu-mobile nav ul li a:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff!important;
     text-decoration: none;
     transform: scale(1.1);
 }
