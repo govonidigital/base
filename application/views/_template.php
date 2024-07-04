@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <header>
-      <div class="interface">
+    <div class="interface">
         <a <a href="<?php echo base_url('Principal') ?>">
           <img src='<?php echo base_url('assets/img/logo.png'); ?>' class="logo">
         </a>
@@ -67,11 +67,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </nav>
         </div>
         <div class="overlay-menu" id="overlay-menu"></div>
-      </div>
-    </header>
-
-
-
+    </div>
+</header>
 
 <!-- 
 <div class='topo'>
