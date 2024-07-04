@@ -24,9 +24,56 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url('assets/css/estilo.css');?>"/>
     <script src="<?php echo base_url('assets/js/jquery.js');?>"></script>
     <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js');?>"></script>
+    <script src="<?php echo base_url('assets/js/menu.js');?>"></script>
 </head>
 <body>
 
+
+<header>
+      <div class="interface">
+        <a <a href="<?php echo base_url('Principal') ?>">
+          <img src='<?php echo base_url('assets/img/logo.png'); ?>' class="logo">
+        </a>
+
+        <nav class="menu-desktop d-none d-md-block">
+          <ul>
+            <li><a href="<?php echo base_url('') ?>">Principal</a>
+            <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
+            <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
+            <li><a href="<?php echo base_url('galeria') ?>">Galeria</a>
+            <li><a href="<?php echo base_url('leads') ?>">Leads</a>
+            <li><a href="<?php echo base_url('contato') ?>">Contato</a>
+          </ul>
+        </nav>
+
+        <div class="btn-abrir-menu d-block d-md-none" id="btn-menu">
+          <i class="fas fa-bars mx-2"></i>
+        </div>
+
+        <div class="menu-mobile" id="menu-mobile">
+          <div class="btn-fechar">
+            <i class="fas fa-times"></i>
+          </div>
+
+          <nav>
+            <ul>
+                <li><a href="<?php echo base_url('') ?>">Principal</a>
+                <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
+                <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
+                <li><a href="<?php echo base_url('galeria') ?>">Galeria</a>
+                <li><a href="<?php echo base_url('leads') ?>">Leads</a>
+                <li><a href="<?php echo base_url('contato') ?>">Contato</a>
+            </ul>
+          </nav>
+        </div>
+        <div class="overlay-menu" id="overlay-menu"></div>
+      </div>
+    </header>
+
+
+
+
+<!-- 
 <div class='topo'>
     <div class='container'>
         <div class='row justify-content-between align-items-center py-3'>
@@ -47,7 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <a class="nav-link" href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo base_url('blog') ?>">Blog</a>
+                                <a class="nav-link" href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo base_url('galeria') ?>">Galeria</a>
@@ -64,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
   <!--------------------- BANNER -------------------->

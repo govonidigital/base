@@ -3,19 +3,34 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+
+.cardemail {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid #c9c9c9; 
+    border-radius: 20px;
+}
+
+
 </style> 
 <div class='container'>
     <div class='row'>
         <div class='col-12'>
             <div class="app-content content">
-                <div class="content-wrapper card">
-                    <div class="content-body">
+                <div class="content-wrapper cardemail shadow-sm">
+                    <div class="content-body p-5">
                         <section id="pagination">
                             <form action="<?php echo base_url('admin/email/salva'); ?>" method="post">
                                 <div class="row">
                                     <div class="col-12" style="padding-bottom: 10px; padding-top: 10px;">
                                         <center>
-                                            <h3>Configurações da Loja Virtual</h3>
+                                            <h3>Configurações do Email</h3>
                                             
                                             <?php 
                                             if (isset($retorno_teste)){
@@ -28,7 +43,7 @@
                                             ?>
                                             
                                         </center>
-                                        <hr/>
+                                     
                                     </div>
                                     <div class="col-12 col-md-2"><br />
                                         <label for="protocol"><b>Protocolo</b></label>
@@ -54,14 +69,14 @@
                                         <label for="smtp_pass"><b>Smtp pass</b></label>
                                     <input type="password" class="form-control" id="smtp_pass" name="smtp_pass" required value="<?php echo $email[0]->smtp_pass;?>" />
                                     </div>
-                                    <div class="col-12 col-md-3"><br />
+                                    <!-- <div class="col-12 col-md-3"><br />
                                         <label for="charset"><b>Charset</b></label>
                                     <input type="text" class="form-control" id="charset" name="charset" required value="<?php echo $email[0]->charset;?>" />
-                                    </div>
-                                    <div class="col-12 col-md-3"><br />
+                                    </div> -->
+                                    <!-- <div class="col-12 col-md-3"><br />
                                         <label for="subject"><b>Assunto</b></label>
                                     <input type="text" class="form-control" id="subject" name="subject" required value="<?php echo $email[0]->subject;?>" />
-                                    </div>
+                                    </div> -->
                                     <div class="col-12 col-md-6"><br />
                                         <label for="mail_to"><b>Email para envio</b></label>
                                     <input type="email" class="form-control" id="mail_to" name="mail_to"  required value="<?php echo $email[0]->mail_to;?>" />
@@ -79,25 +94,14 @@
          </div>
     </div>
 
-
-
-
-<div class='row'>
-    <div class='col-12 text-center py-3 mt-3'>
-        <hr>
-        <h3>Testar envio de email</h3>
-        <form action="<?php echo base_url('admin/email/testar');?>" method='post'>
-        <input type='text' value='' name='email_teste' placeholder='Email que vai receber o teste'>
-        <input type='submit' value='Testar'>
-        </form>
-
-        
-
+    <div class='row'>
+        <div class='col-12 text-center py-3 mt-3'>
+            <h3>Testar envio de email</h3>
+            <form action="<?php echo base_url('admin/email/testar');?>" method='post' class="form-inline d-flex justify-content-center">
+                <input type='text' value='' name='email_teste' placeholder='Email que vai receber o teste' class="form-control mr-2">
+                <input type='submit' value='Testar' class="btn btn-primary">
+            </form>
+        </div>
     </div>
-</div>
-
-
-
-
 </div>
 

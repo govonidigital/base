@@ -74,11 +74,11 @@
 
     </div>
 
-    <div class='row px-3 my-4 d-flex'>
+    <!-- <div class='row px-3 my-4 d-flex'>
         <div class='col-12 text-center'>
             <h2>Lorem Ipsum is simply dummy<h2>
             <iframe width="560" height="315" src="https://www.youtube.com/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>       
         </div>
-    </div>
+    </div> -->
 
 </div>
