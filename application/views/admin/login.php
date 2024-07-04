@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <a href="<?php // echo base_url(); ?>admin/login/novologin" class="forPassword"> Criar conta !</a>
   </div> -->
   <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-  <p class="mt-5 mb-3 text-muted">&copy; Govoni Soluções 2022</p>
+  <p class="mt-5 mb-3 text-muted">&copy; Govoni Marketing Digital 2024</p>
 </form>
 
 </body>

@@ -1,7 +1,7 @@
 <div class='container mt-5 mb-5'>
     <div class='row justify-content-center'>
         <div class='col-12 text-center'>
-            <span class="bemvindo">Bem vindo ao admin</span>
+            <span class="bemvindo">BEM VINDO AO ADMIN</span>
         </div>
     </div>
 </div>

@@ -78,7 +78,7 @@ class Blog extends CI_Controller {
             $config['image_library'] = 'gd2';
             $config['source_image'] = "./assets/img/blog/$file_name";
             $config['maintain_ratio'] = TRUE;
-            $config['width']         = 1600;
+            $config['width']         = 2000;
 
             $this->load->library('image_lib', $config);
 
@@ -112,8 +112,8 @@ class Blog extends CI_Controller {
         $this->load->model('blog_model');
 
         $config['upload_path']          = './assets/img/blog/';
-        $config['allowed_types']        = 'jpg|png|jpeg';
-        $config['encrypt_name']        = 'true';
+        $config['allowed_types']        = 'JPG|PNG|JPEG|jpg|png|jpeg';
+        $config['encrypt_name']         =  true;
         $config['max_size']             = 2000;
         $config['max_width']            = 2000;
         $config['max_height']           = 1000;
@@ -134,11 +134,8 @@ class Blog extends CI_Controller {
         }
         
         
-        
         $retorno = $this->blog_model->blog_edita_salva($this->input->post('id_blog'),$data);
         
-
-
         redirect('admin/blog/lista','refresh');
     }
     
