@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <ul>
             <li><a href="<?php echo base_url('') ?>">Principal</a>
             <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
-            <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
+            <li><a href="<?php echo base_url('blog') ?>">Blog</a>
             <li><a href="<?php echo base_url('galeria') ?>">Galeria</a>
             <li><a href="<?php echo base_url('leads') ?>">Leads</a>
             <li><a href="<?php echo base_url('contato') ?>">Contato</a>
@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul>
                 <li><a href="<?php echo base_url('') ?>">Principal</a>
                 <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
-                <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
+                <li><a href="<?php echo base_url('blog') ?>">Blog</a>
                 <li><a href="<?php echo base_url('galeria') ?>">Galeria</a>
                 <li><a href="<?php echo base_url('leads') ?>">Leads</a>
                 <li><a href="<?php echo base_url('contato') ?>">Contato</a>
