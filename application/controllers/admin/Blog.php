@@ -108,36 +108,51 @@ class Blog extends CI_Controller {
         $this->template->load('admin/_template', 'admin/blog_edita', $data);
     }
     
-    public function blog_edita_salva(){
+    public function blog_edita_salva() {
         $this->load->model('blog_model');
-
-        $config['upload_path']          = './assets/img/blog/';
-        $config['allowed_types']        = 'JPG|PNG|JPEG|jpg|png|jpeg';
-        $config['encrypt_name']         =  true;
-        $config['max_size']             = 2000;
-        $config['max_width']            = 2000;
-        $config['max_height']           = 1000;
-        
+    
+        $config['upload_path'] = './assets/img/blog/';
+        $config['allowed_types'] = 'JPG|PNG|JPEG|jpg|png|jpeg';
+        $config['encrypt_name'] = true;
+    
         $this->load->library('upload', $config);
-        
+    
         $data = array(
             'data' => $this->input->post('data'),
             'nome' => $this->input->post('nome'),
             'resumo' => $this->input->post('resumo'),
             'texto' => $this->input->post('texto')
         );
-
-        if ($this->upload->do_upload('imagem')){
-            $upload_data = $this->upload->data(); //Returns array of containing all of the data related to the file you uploaded.
+    
+        // Check if a file is being uploaded
+        if ($this->upload->do_upload('imagem')) {
+            $upload_data = $this->upload->data();
             $file_name = $upload_data['file_name'];
-            $data = $data + array('imagem' => $file_name);  
+            $data['imagem'] = $file_name;
+    
+            $resize_config['image_library'] = 'gd2';
+            $resize_config['source_image'] = "./assets/img/blog/$file_name";
+            $resize_config['maintain_ratio'] = TRUE;
+            $resize_config['width'] = 2000;
+    
+            $this->load->library('image_lib', $resize_config);
+            $this->image_lib->resize();
+        } else {
+            // If an image was uploaded, do nothing and continue
+            if (!empty($_FILES['imagem']['name'])) {
+                echo $this->upload->display_errors();
+                return;
+            }
         }
-        
-        
-        $retorno = $this->blog_model->blog_edita_salva($this->input->post('id_blog'),$data);
-        
-        redirect('admin/blog/lista','refresh');
+    
+        // Save the updated data to the database
+        $id_blog = $this->input->post('id_blog');
+        $this->blog_model->blog_edita_salva($id_blog, $data);
+    
+        redirect('admin/blog/lista', 'refresh');
     }
+
+   
     
     public function blog_deleta($data){
         $this->load->model('blog_model');
