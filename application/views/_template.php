@@ -31,18 +31,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <header>
     <div class="interface">
-        <a <a href="<?php echo base_url('Principal') ?>">
+        <a href="<?php echo base_url('Principal') ?>">
           <img src='<?php echo base_url('assets/img/logo.png'); ?>' class="logo">
         </a>
 
         <nav class="menu-desktop d-none d-md-block">
           <ul>
-            <li><a href="<?php echo base_url('') ?>">Principal</a>
-            <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
-            <li><a href="<?php echo base_url('blog') ?>">Blog</a>
-            <li><a href="<?php echo base_url('galeria') ?>">Galeria</a>
-            <li><a href="<?php echo base_url('leads') ?>">Leads</a>
-            <li><a href="<?php echo base_url('contato') ?>">Contato</a>
+            <li><a href="<?php echo base_url('') ?>" class="<?= ($this->uri->segment(1) == '') ? 'active' : '' ?>">Principal</a></li>
+            <li><a href="<?php echo base_url('quemsomos') ?>" class="<?= ($this->uri->segment(1) == 'quemsomos') ? 'active' : '' ?>">Quem Somos</a></li>
+            <li><a href="<?php echo base_url('blog') ?>" class="<?= ($this->uri->segment(1) == 'blog') ? 'active' : '' ?>">Blog</a></li>
+            <li><a href="<?php echo base_url('galeria') ?>" class="<?= ($this->uri->segment(1) == 'galeria') ? 'active' : '' ?>">Galeria</a></li>
+            <li><a href="<?php echo base_url('leads') ?>" class="<?= ($this->uri->segment(1) == 'leads') ? 'active' : '' ?>">Leads</a></li>
+            <li><a href="<?php echo base_url('contato') ?>" class="<?= ($this->uri->segment(1) == 'contato') ? 'active' : '' ?>">Contato</a></li>
           </ul>
         </nav>
 
@@ -57,59 +57,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <nav>
             <ul>
-                <li><a href="<?php echo base_url('') ?>">Principal</a>
-                <li><a href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
-                <li><a href="<?php echo base_url('blog') ?>">Blog</a>
-                <li><a href="<?php echo base_url('galeria') ?>">Galeria</a>
-                <li><a href="<?php echo base_url('leads') ?>">Leads</a>
-                <li><a href="<?php echo base_url('contato') ?>">Contato</a>
+                <li><a href="<?php echo base_url('') ?>" class="<?= ($this->uri->segment(1) == '') ? 'active' : '' ?>">Principal</a></li>
+                <li><a href="<?php echo base_url('quemsomos') ?>" class="<?= ($this->uri->segment(1) == 'quemsomos') ? 'active' : '' ?>">Quem Somos</a></li>
+                <li><a href="<?php echo base_url('blog') ?>" class="<?= ($this->uri->segment(1) == 'blog') ? 'active' : '' ?>">Blog</a></li>
+                <li><a href="<?php echo base_url('galeria') ?>" class="<?= ($this->uri->segment(1) == 'galeria') ? 'active' : '' ?>">Galeria</a></li>
+                <li><a href="<?php echo base_url('leads') ?>" class="<?= ($this->uri->segment(1) == 'leads') ? 'active' : '' ?>">Leads</a></li>
+                <li><a href="<?php echo base_url('contato') ?>" class="<?= ($this->uri->segment(1) == 'contato') ? 'active' : '' ?>">Contato</a></li>
             </ul>
           </nav>
         </div>
         <div class="overlay-menu" id="overlay-menu"></div>
     </div>
 </header>
-
-<!-- 
-<div class='topo'>
-    <div class='container'>
-        <div class='row justify-content-between align-items-center py-3'>
-            <div class='col-md-3 col-8'>
-                <a href="<?php echo base_url('Principal') ?>"><img src='<?php echo base_url('assets/img/logo.png'); ?>' class="logo"></a>
-            </div>
-            <div class='col-md-9 col-4'>
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo base_url('') ?>">Principal</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo base_url('quemsomos') ?>">Quem Somos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo base_url('galeria') ?>">Galeria</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo base_url('leads') ?>">Leads</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo base_url('contato') ?>">Contato</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 
   <!--------------------- BANNER -------------------->
 
@@ -205,15 +164,15 @@ if (!empty($banners)) {
         <div class="row justify-content-center p-3">
             <div class="col-md-4 text-center mb-1">
                 <span>Mapa do Site</span><br />
-                <div class="row">
-                    <div class="col-sm-6">
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 text-center mt-md-3 mt-0">
                         <ul class="nav flex-column">
                             <li class="nav-item"><a class="nav-link" href="<?php echo base_url('') ?>">Principal</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo base_url('quemsomos') ?>">Quem Somos</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo base_url('blog') ?>">Blog</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 text-center mt-md-3 mt-0">
                         <ul class="nav flex-column">
                             <li class="nav-item"><a class="nav-link" href="<?php echo base_url('galeria') ?>">Galeria</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo base_url('leads') ?>">Leads</a></li>
@@ -237,7 +196,13 @@ if (!empty($banners)) {
               </a>
             </div>
           </div>
-          <div class="col-md-4 text-center mb-1"><span>Newsletter</span></div>
+          <div class="col-md-4 text-center mb-1"><span>Newsletter</span><br>
+            <form action="<?php echo base_url('');?>" id="" method="post" name="" onsubmit="">
+              <span style="font-size: 12px;">Quer receber mais notícias?</span>
+              <input type="text" name="email" id="email" class="form-group p-1" placeholder="Digite seu Email">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
         </div>
         <span class="text-center">
           <center>

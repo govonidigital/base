@@ -9,9 +9,8 @@
 <div class='container'>
     <div class='row'>
         <div class='col-12'>
-
             <div class="app-content content">
-                <div class="content-wrapper card">
+                <div class="content-wrapper card shadow-sm" style="border-radius: 20px;">
                     <div class="content-body">
                         <section id="pagination">
                             <div class="row p-2">

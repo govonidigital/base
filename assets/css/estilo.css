@@ -6,6 +6,7 @@
 
 html, body {
     height: 100%;
+    transition: 1s ease;
 }
 
 body {
@@ -112,9 +113,14 @@ header a {
     transition: .2s;
 }
 
+
+header nav.menu-desktop ul li a.active {
+    border-bottom: 1px solid #000;
+}
+
 header nav.menu-desktop a:hover {
     color: #000;
-    transform: scale(1.2);
+    transform: scale(1.05);
     text-decoration: none;
 }
 
@@ -207,6 +213,12 @@ header nav.menu-desktop ul li {
     z-index: 88888;
     display: none;
 }
+
+
+
+
+
+
 
 /* COMEÇO RODAPE */
 

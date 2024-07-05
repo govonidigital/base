@@ -30,21 +30,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <div style="background-color: #005380;">
-    <div class="text-right mx-5 mt-2 mb-2">
+    <div class="text-right mx-5 mt-2 mb-2 p-1">
         <a href="https://wa.me/5551984728718" target="_blank">
-            <i class="fab fa-whatsapp mx-2" style='color:white; font-size:30px;'></i>
+            <i class="fab fa-whatsapp mx-2" style='color:white; font-size:28px;'></i>
         </a>
         <a href="https://www.instagram.com/govonidigital/" target="_blank">
-            <i class="fab fa-instagram mx-2" style='color:white; font-size:30px;'></i>
+            <i class="fab fa-instagram mx-2" style='color:white; font-size:28px;'></i>
         </a>
         <a href="https://www.facebook.com/govonidigital" target="_blank">
-            <i class="fab fa-facebook mx-2" style='color:white; font-size:30px;'></i>
+            <i class="fab fa-facebook mx-2" style='color:white; font-size:28px;'></i>
         </a>
         <a href="https://www.linkedin.com/company/govonidigital/" target="_blank">
-            <i class="fab fa-linkedin mx-2" style='color:white; font-size:30px;'></i>
+            <i class="fab fa-linkedin mx-2" style='color:white; font-size:28px;'></i>
         </a>
         <a href="https://www.youtube.com/@govoni.digital" target="_blank">
-            <i class="fab fa-youtube mx-2" style='color:white; font-size:30px;'></i>
+            <i class="fab fa-youtube mx-2" style='color:white; font-size:28px;'></i>
         </a>
     </div>
 </div>
