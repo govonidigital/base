@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link href="<?php echo base_url('vendor/fancyapps/fancybox/source/jquery.fancybox.css');?>" rel="stylesheet" type="text/css" />-->
 </head>
 <body>
-<div style="background-color: #005380;">
+<!-- <div style="background-color: #005380;">
     <div class="text-right mx-5 mt-2 mb-2 p-1">
         <a href="https://wa.me/5551984728718" target="_blank">
             <i class="fab fa-whatsapp mx-2" style='color:white; font-size:28px;'></i>
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <i class="fab fa-youtube mx-2" style='color:white; font-size:28px;'></i>
         </a>
     </div>
-</div>
+</div> -->
 <div class='topoadmin'>
     <div class='container'>
         <div class='row justify-content-between align-items-center py-3'>
