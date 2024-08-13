@@ -49,9 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div> -->
 <div class='topoadmin'>
-    <div class='container'>
+    <div class='container-fluid'>
         <div class='row justify-content-between align-items-center py-3'>
-            <div class='col-md-3'>
+            <div class='col-6 offset-3 col-md-2 offset-md-0'>
                 <a href="<?php echo base_url('Principal') ?>"><img src='<?php echo base_url('assets/img/logo.png'); ?>' class="img-fluid"></a>
             </div>
             <div class='col-md-9'>
