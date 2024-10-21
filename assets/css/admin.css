@@ -22,16 +22,13 @@ body {
 .topoadmin .navbar-nav .nav-link {
   color: black !important;
   font-size: 18px;
-  font-weight: 300;
-  margin-right: 40px;
-  transition: 0.1s;
+  font-weight: 500;
+  margin-right: 30px;
+  transition: 0.1s ease;
 }
 
 .topoadmin .navbar-nav .nav-link:hover {
-  color: black !important;
-  font-size: 18px;
-  font-weight: 600;
-  transform: scale(1.02);
+  color: #0f5380 !important;
 }
 
 .topoadmin .logo {

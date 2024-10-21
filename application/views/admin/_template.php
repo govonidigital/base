@@ -29,28 +29,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link href="<?php echo base_url('vendor/fancyapps/fancybox/source/jquery.fancybox.css');?>" rel="stylesheet" type="text/css" />-->
 </head>
 <body>
-<!-- <div style="background-color: #005380;">
-    <div class="text-right mx-5 mt-2 mb-2 p-1">
-        <a href="https://wa.me/5551984728718" target="_blank">
-            <i class="fab fa-whatsapp mx-2" style='color:white; font-size:28px;'></i>
-        </a>
-        <a href="https://www.instagram.com/govonidigital/" target="_blank">
-            <i class="fab fa-instagram mx-2" style='color:white; font-size:28px;'></i>
-        </a>
-        <a href="https://www.facebook.com/govonidigital" target="_blank">
-            <i class="fab fa-facebook mx-2" style='color:white; font-size:28px;'></i>
-        </a>
-        <a href="https://www.linkedin.com/company/govonidigital/" target="_blank">
-            <i class="fab fa-linkedin mx-2" style='color:white; font-size:28px;'></i>
-        </a>
-        <a href="https://www.youtube.com/@govoni.digital" target="_blank">
-            <i class="fab fa-youtube mx-2" style='color:white; font-size:28px;'></i>
-        </a>
-    </div>
-</div> -->
+
 <div class='topoadmin'>
     <div class='container-fluid'>
-        <div class='row justify-content-between align-items-center py-3'>
+        <div class='row justify-content-between align-items-center' style='padding: 14px 260px;'>
             <div class='col-6 offset-3 col-md-2 offset-md-0'>
                 <a href="<?php echo base_url('Principal') ?>"><img src='<?php echo base_url('assets/img/logo.png'); ?>' class="img-fluid"></a>
             </div>
@@ -100,7 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="footer">
     <div class='container'>
         <div class='row'>
-            <div class='col-12 text-center py-3'>
+            <div class='col-12 text-center'>
                 <span>Desenvolvido por <a href='https://www.govoni.com.br' target='_blank'>Govoni Marketing Digital</a></span>
             </div>
         </div>

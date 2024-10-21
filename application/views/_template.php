@@ -194,6 +194,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
       }
 
+      .banner_pc img {
+        max-height:800px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .banner_mobile img {
+          height: 500px;
+          width: 100%;
+          object-fit: cover;
+      }
+
       /* ESTILO DO MENU MOBILE */
       .btn-abrir-menu {
         display: block;
@@ -563,7 +575,7 @@ if (!empty($banners)) {
         foreach ($banners as $b) {
             if ($b->tipo == 'PC' || $b->tipo == 'AMBOS') {
                 $active = $i == 0 ? 'active' : '';
-                echo "<div class='carousel-item $active'>
+                echo "<div class='carousel-item banner_pc $active'>
                                           <a href='" . $b->link . "'>
                                               <img src='" . base_url('assets/img/banner/' . $b->imagem) . "' class='d-none d-md-block w-100' alt=''>
                                           </a>
@@ -601,7 +613,7 @@ if (!empty($banners)) {
         foreach ($banners as $b) {
             if ($b->tipo == 'MOBILE' || $b->tipo == 'AMBOS') {
                 $active = $i == 0 ? 'active' : '';
-                echo "<div class='carousel-item $active'>
+                echo "<div class='carousel-item banner_mobile $active'>
                                                 <a href='" . $b->link . "'>
                                                   <img src='" . base_url('assets/img/banner/' . $b->imagem) . "' class='d-block d-md-none w-100' alt='...'>
                                                 </a>
