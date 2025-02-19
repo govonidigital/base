@@ -23,71 +23,72 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?php echo base_url('assets/fontawesome/css/all.css');?>" rel="stylesheet"/>
     <script src="<?php echo base_url('assets/js/jquery.js');?>"></script>
     <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js');?>"></script> 
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
+
 <!--<link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
 <script src="<?php echo base_url('vendor/fancyapps/fancybox/source/jquery.fancybox.js');?>"></script>
 <link href="<?php echo base_url('vendor/fancyapps/fancybox/source/jquery.fancybox.css');?>" rel="stylesheet" type="text/css" />-->
 </head>
 <body>
-
-<div class='topoadmin'>
-    <div class='container-fluid'>
-        <div class='row justify-content-between align-items-center' style='padding: 14px 260px;'>
-            <div class='col-6 offset-3 col-md-2 offset-md-0'>
-                <a href="<?php echo base_url('Principal') ?>"><img src='<?php echo base_url('assets/img/logo.png'); ?>' class="img-fluid"></a>
-            </div>
-            <div class='col-md-9'>
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                            <a class="nav-link" href='<?php echo base_url('admin/principal'); ?>'>Principal</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href='<?php echo base_url('admin/galeria'); ?>'>Galeria</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href='<?php echo base_url('admin/banners'); ?>'>Banners</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href='<?php echo base_url('admin/blog'); ?>'>Blog</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href='<?php echo base_url('admin/leads'); ?>' >Leads</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href='<?php echo base_url('admin/email'); ?>' >Email</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href='<?php echo base_url('admin/usuarios'); ?>' >Usuarios</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href='<?php echo base_url('principal'); ?>'>Sair</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+<div class="wrapper">
+    <button id="menu-toggle"  class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="overlay" id="overlay"></div>
+    
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="<?php echo base_url('Principal') ?>">
+                <img src="<?php echo base_url('assets/img/logo.png'); ?>" class="img-fluid">
+            </a>
         </div>
+        <ul class="list-unstyled components px-2 py-3">
+            <li><a href="<?php echo base_url('admin/principal'); ?>"><i class="fas fa-home"></i> Principal</a></li>
+            <li><a href="<?php echo base_url('admin/galeria'); ?>"><i class="fas fa-images"></i> Galeria</a></li>
+            <li><a href="<?php echo base_url('admin/banners'); ?>"><i class="fas fa-image"></i> Banners</a></li>
+            <li><a href="<?php echo base_url('admin/blog'); ?>"><i class="fas fa-blog"></i> Blog</a></li>
+            <li><a href="<?php echo base_url('admin/leads'); ?>"><i class="fas fa-users"></i> Leads</a></li>
+            <li><a href="<?php echo base_url('admin/email'); ?>"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="<?php echo base_url('admin/usuarios'); ?>"><i class="fas fa-user"></i> Usuários</a></li>
+            <li><a href="<?php echo base_url('principal'); ?>"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="container">
+            <?php echo $contents; ?>
+        </div>
+<!-- 
+        <div class="footer">
+            <div class="text-center">
+                <span>Desenvolvido por <a href="https://www.govoni.com.br" target="_blank">Govoni Marketing Digital</a></span>
+            </div>
+        </div> -->
     </div>
+
+
+    
 </div>
 
-<div class="main-content">
-    <?php echo $contents;?>
-</div>
 
-<div class="footer">
-    <div class='container'>
-        <div class='row'>
-            <div class='col-12 text-center'>
-                <span>Desenvolvido por <a href='https://www.govoni.com.br' target='_blank'>Govoni Marketing Digital</a></span>
-            </div>
-        </div>
-    </div>
-</div>                   
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var menuToggle = document.getElementById("menu-toggle");
+    var sidebar = document.getElementById("sidebar");
+    var overlay = document.getElementById("overlay");
+
+    menuToggle.addEventListener("click", function() {
+        sidebar.classList.toggle("active");
+    });
+
+    overlay.addEventListener("click", function() {
+        sidebar.classList.remove("active");
+    });
+});
+</script>
 
 
 </body>

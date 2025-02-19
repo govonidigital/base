@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
 
                                         <div class="text-muted p-2 text-center">
-                                            <p class="mt-5 mb-3 text-muted">&copy; Govoni Marketing Digital 2024</p>
+                                            <p class="mt-5 mb-3 text-muted">&copy; Govoni Marketing Digital 2025</p>
                                         </div>
                                     </form>
                                 </div>
