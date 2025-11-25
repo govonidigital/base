@@ -16,7 +16,12 @@ class Blog extends CI_Controller {
 		$this->load->model('blog_model');
         $data['blog'] = $this->blog_model->lista();
 
-		$this->template->load('_template','blog', $data);
+		$this->load->model('layout_model');
+        $data['layout'] = $this->layout_model->get_config();
+		$pasta = $data['layout']->template;
+
+		$this->template->load($pasta.'/_template',$pasta.'/blog', $data);
+
 	}
 
 	public function ver(){
@@ -31,6 +36,10 @@ class Blog extends CI_Controller {
 		$this->load->model('blog_model');
 		$data['blog'] = $this->blog_model->ver($this->uri->segment(3));
 
-		$this->template->load('_template','blog_ver', $data);
+		$this->load->model('layout_model');
+        $data['layout'] = $this->layout_model->get_config();
+		$pasta = $data['layout']->template;
+
+		$this->template->load($pasta.'/_template',$pasta.'/blog_ver', $data);
 	}
 }

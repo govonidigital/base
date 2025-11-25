@@ -14,7 +14,12 @@ class Leads extends CI_Controller {
 		$data['seo_keywords'] = '';
 
 
-		$this->template->load('_template','leads', $data);
+		$this->load->model('layout_model');
+        $data['layout'] = $this->layout_model->get_config();
+		$pasta = $data['layout']->template;
+
+		$this->template->load($pasta.'/_template',$pasta.'/leads', $data);
+
 	}
 
 

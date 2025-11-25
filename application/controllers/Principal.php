@@ -11,14 +11,18 @@ class Principal extends CI_Controller {
 		$data = $this->base->site();
 
 
+
 		$data['seo_title'] = '';
 		$data['seo_description'] = '';
 		$data['seo_keywords'] = '';
 
 		$this->load->model('banners_model');
-       
         $data['banners'] = $this->banners_model->lista('SIM');
 
-		$this->template->load('_template','principal', $data);
+		$this->load->model('layout_model');
+        $data['layout'] = $this->layout_model->get_config();
+		$pasta = $data['layout']->template;
+
+		$this->template->load($pasta.'/_template',$pasta.'/principal', $data);
 	}
 }

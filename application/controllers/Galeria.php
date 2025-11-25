@@ -18,6 +18,11 @@ class Galeria extends CI_Controller {
        
         $data['galerias'] = $this->galeria_model->lista();
 
-		$this->template->load('_template','galeria', $data);
+		$this->load->model('layout_model');
+        $data['layout'] = $this->layout_model->get_config();
+		$pasta = $data['layout']->template;
+
+		$this->template->load($pasta.'/_template',$pasta.'/galeria', $data);
+
 	}
 }

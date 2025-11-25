@@ -18,7 +18,12 @@ class Contato extends CI_Controller {
         $data['email'] = $this->email_model->lista();
 
 
-		$this->template->load('_template','contato', $data);
+        $this->load->model('layout_model');
+        $data['layout'] = $this->layout_model->get_config();
+		$pasta = $data['layout']->template;
+
+		$this->template->load($pasta.'/_template',$pasta.'/contato', $data);
+
 	}
 
 

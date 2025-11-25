@@ -3,25 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Codigos extends CI_Controller
 {
-    public function __construct()
-    {
+    public function __construct(){
+        
         parent::__construct();
-        $this->verifica_sessao();
+
+        if(!$this->session->userdata('logado')){
+            redirect('admin/login', 'refresh');
+        }
+
         $this->load->model('Codigos_model');
-        $this->load->model('Logs_model');
         $this->load->library('session');
     }
 
-    private function verifica_sessao()
-    {
-        // Garante que o usuário esteja logado
-        if (!$this->session->userdata('id_usuario')) {
-            redirect('admin/login', 'refresh');
-        }
-    }
 
-    public function mostra()
-    {
+    public function index(){
         $data['codigos'] = $this->Codigos_model->mostra();
 
         if (!empty($data['codigos'])) {
@@ -82,6 +77,6 @@ class Codigos extends CI_Controller
         $this->session->set_flashdata('mensagem', 'Códigos atualizados com sucesso!');
 
         // ⚡ Volta para a mesma tela (mantém usuário nela)
-        redirect('admin/codigos/mostra', 'refresh');
+        redirect('admin/codigos', 'refresh');
     }
 }
