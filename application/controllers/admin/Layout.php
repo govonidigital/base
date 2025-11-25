@@ -94,7 +94,7 @@ class Layout extends CI_Controller {
         // Salva ou atualiza
         $this->Layout_model->salvar_config($dados);
 
-        redirect('admin/layout/mostra');
+        redirect('admin/layout');
     }
 
     // -------------------------------------
@@ -116,6 +116,6 @@ class Layout extends CI_Controller {
             $this->Layout_model->salvar_config([$campo => '']);
         }
 
-        redirect('admin/layout/mostra');
+        redirect('admin/layout');
     }
 }
