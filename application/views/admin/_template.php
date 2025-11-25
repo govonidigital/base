@@ -54,8 +54,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li><a href="<?php echo base_url('admin/blog'); ?>"><i class="fas fa-blog"></i> Blog</a></li>
             <li><a href="<?php echo base_url('admin/leads'); ?>"><i class="fas fa-users"></i> Leads</a></li>
 
-            <li><a href="<?php echo base_url('admin/layout/mostra'); ?>"><i class="fas fa-cog"></i> Layout</a></li>
-            <li><a href="<?php echo base_url('admin/codigos/mostra'); ?>"><i class="fas fa-code"></i> Codigo</a></li>
+            <li><a href="<?php echo base_url('admin/layout'); ?>"><i class="fas fa-cog"></i> Layout</a></li>
+            <li><a href="<?php echo base_url('admin/codigos'); ?>"><i class="fas fa-code"></i> Codigo</a></li>
             <li><a href="<?php echo base_url('admin/email'); ?>"><i class="fas fa-envelope"></i> Email</a></li>
             <li><a href="<?php echo base_url('admin/usuarios'); ?>"><i class="fas fa-user"></i> Usuários</a></li>
             <li><a href="<?php echo base_url('principal'); ?>"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
