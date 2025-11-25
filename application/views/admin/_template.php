@@ -30,6 +30,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--<link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
 <script src="<?php echo base_url('vendor/fancyapps/fancybox/source/jquery.fancybox.js');?>"></script>
 <link href="<?php echo base_url('vendor/fancyapps/fancybox/source/jquery.fancybox.css');?>" rel="stylesheet" type="text/css" />-->
+
+  
+
 </head>
 <body>
 <div class="wrapper">
@@ -50,6 +53,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li><a href="<?php echo base_url('admin/banners'); ?>"><i class="fas fa-image"></i> Banners</a></li>
             <li><a href="<?php echo base_url('admin/blog'); ?>"><i class="fas fa-blog"></i> Blog</a></li>
             <li><a href="<?php echo base_url('admin/leads'); ?>"><i class="fas fa-users"></i> Leads</a></li>
+
+            <li><a href="<?php echo base_url('admin/layout/mostra'); ?>"><i class="fas fa-cog"></i> Layout</a></li>
+            <li><a href="<?php echo base_url('admin/codigos/mostra'); ?>"><i class="fas fa-code"></i> Codigo</a></li>
             <li><a href="<?php echo base_url('admin/email'); ?>"><i class="fas fa-envelope"></i> Email</a></li>
             <li><a href="<?php echo base_url('admin/usuarios'); ?>"><i class="fas fa-user"></i> Usuários</a></li>
             <li><a href="<?php echo base_url('principal'); ?>"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
@@ -57,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </nav>
 
     <div class="content">
-        <div class="container">
+     <div class="container">
             <?php echo $contents; ?>
         </div>
 <!-- 
