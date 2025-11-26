@@ -5,7 +5,7 @@
     }
 </style>
 <?php foreach ($usuario as $u){} ?>
-<div class='container'>
+
     <div class="row">
         <div class="col-12"><br /><br />
 
@@ -33,4 +33,3 @@
             </form>
         </div>
     </div>
-</div>

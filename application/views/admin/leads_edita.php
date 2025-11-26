@@ -1,6 +1,6 @@
 
 <?php foreach ($leads as $l){} ?>
-<div class='container'>
+
     <div class="row">
         <div class="col-12"><br /><br />
             <form action="<?php echo base_url('admin/leads/novo_salva'); ?>" method="post" enctype="multipart/form-data">
@@ -39,4 +39,3 @@
             </form>
         </div>
     </div>
-</div>

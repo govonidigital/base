@@ -5,7 +5,7 @@
     }
 </style>
 <?php foreach ($banners as $ba){} ?>
-<div class='container-fluid'>
+
     <div class="row">
         <div class="col-12"><br /><br />
             <form action="<?php echo base_url('admin/banners/banner_edita_salva'); ?>" method="post" enctype="multipart/form-data">
@@ -48,4 +48,3 @@
             </form>
         </div>
     </div>
-</div>

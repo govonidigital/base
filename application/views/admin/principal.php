@@ -21,7 +21,7 @@ ul.list-unstyled li {
 }
 </style>
 
-<div class="container mt-5 text-center">
+
     <div class="row">
         <div class="col-12">
             <h1 class="display-4">Bem-vindo ao Painel de Administração</h1>
@@ -32,5 +32,3 @@ ul.list-unstyled li {
     
    
     
-
-</div>

@@ -5,7 +5,9 @@
     }
 </style>
 <?php foreach ($blog as $bl){} ?>
-<div class='container-fluid'>
+
+
+
     <div class="row">
         <div class="col-12"><br /><br />
             <form action="<?php echo base_url('admin/blog/blog_novo_salva'); ?>" method="post" enctype="multipart/form-data">
@@ -48,4 +50,5 @@
             </form>
         </div>
     </div>
-</div>
+
+    

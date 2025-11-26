@@ -5,14 +5,12 @@
   </div>
 <?php endif; ?>
 
-<div class='container'>
+
     <div class='row mt-5'>
         <div class='col-12'>
-            <div class="app-content content">
-                <div class="content-wrapper card shadow-sm" style="border-radius: 20px;">
-                    <div class="content-body">
+
                         <section id="pagination">
-                            <div class="card p-4 shadow-sm" style="border-radius: 20px;">
+                            
                                 <h3 class="text-center mt-5 mb-4">Códigos do Head</h3>
                                 <form action="<?php echo base_url('admin/codigos/salva'); ?>" method="post">
                                     <div class="form-group mb-3">
@@ -46,11 +44,9 @@
                                         <button type="submit" class="btn btn-primary px-4">Concluir Edição</button>
                                     </div>
                                 </form>
-                            </div>
+                            
                         </section>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
-</div>
+

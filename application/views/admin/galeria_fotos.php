@@ -5,7 +5,7 @@
     }
 </style>
 
-<div class='container'>
+
     <div class='row'>
         <div class='col-12'>
 
@@ -62,7 +62,9 @@
             </div>
         </div>
     </div>
-</div>
+
+
+
 
 <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="modalExcluir" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -83,6 +85,8 @@
         </div>
     </div>
 </div>
+
+
 
 <script>
     $(document).ready(function(){

@@ -7,12 +7,10 @@
 </style>
 
 
-<div class='container'>
+
     <div class='row'>
         <div class='col-12'>
-            <div class="app-content content">
-                <div class="content-wrapper card shadow-sm" style="border-radius: 20px;">
-                    <div class="content-body">
+
                         <section id="pagination">
                             <div class="row p-2">
                                 <div class="col-md-12"><br />
@@ -30,9 +28,7 @@
                                             <th>
                                                 Imagem
                                             </th>
-                                            <th>
-                                                Resumo
-                                            </th>
+
                                             <th>
                                                 Data
                                             </th>
@@ -44,7 +40,6 @@
                                             echo "<tr>
                                             <td>$bl->nome</td>
                                             <td><img src='".base_url('assets/img/blog/')."$bl->imagem' style='height: 40px; width: auto;'/></td>
-                                            <td>$bl->resumo</td>
                                             <td>$bl->data</td>
                                             <td><a href='".base_url('admin/blog/blog_edita')."/$bl->id_blog' class='btn btn-primary btn-sm'>Editar</a>&nbsp;
                                             <a href='#' data-id_blog='".$bl->id_blog."' class='btn btn-danger btn-sm deletar'>Deletar</a></td></tr>";
@@ -59,12 +54,15 @@
                             </div>"; 
                             ?>
                         </section>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
-</div>
+
+
+
+
+
+
 <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="modalExcluir" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

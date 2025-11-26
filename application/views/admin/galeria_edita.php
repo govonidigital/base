@@ -16,7 +16,7 @@
 
 <?php foreach($galeria as $g){} ?>
 
-<div class='container'>  
+
     
     <form action="<?php echo base_url('admin/galeria/edita_salva'); ?>" method="post" enctype="multipart/form-data"> 
         <div class="row py-2" style="background-color: #dddddd">
@@ -57,7 +57,9 @@
         
         </div>
     </form>
-</div>
+
+    
+    
 
 
 <script> 

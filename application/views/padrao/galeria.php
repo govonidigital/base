@@ -18,7 +18,7 @@
                             <div class='card-body'>
                             <p>$ga->tag</p>
                                 <div class='btnvergaleria'>
-                                    <button><a href='".base_url('galeria_fotos/lista')."/$ga->id_galeria'>Ver galeria</a></button>
+                                    <button><a href='".base_url('galeria/ver')."/$ga->id_galeria'>Ver galeria</a></button>
                                 </div>
                             </div>
                         </div>
