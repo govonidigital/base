@@ -27,6 +27,9 @@ class Leads extends CI_Controller {
     
 	public function index(){
 
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
         $this->load->model('leads_model');
        
         $data['leads'] = $this->leads_model->lista();
@@ -35,6 +38,9 @@ class Leads extends CI_Controller {
     }
     
     public function novo(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
 
         $this->load->model('leads_model');
         $data['leads'] = $this->leads_model->ver($this->uri->segment(4));
@@ -64,6 +70,9 @@ class Leads extends CI_Controller {
     }
     
     public function edita(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
 
         $this->load->model('leads_model');
         $data['leads'] = $this->leads_model->ver($this->uri->segment(4));

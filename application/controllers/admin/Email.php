@@ -27,6 +27,9 @@ class Email extends CI_Controller {
 
     public function index(){
 
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
 		$this->load->model('email_model');
         $data['email'] = $this->email_model->lista();
 

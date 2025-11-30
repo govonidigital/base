@@ -17,6 +17,11 @@ class Codigos extends CI_Controller
 
 
     public function index(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
+        
         $data['codigos'] = $this->Codigos_model->mostra();
 
         if (!empty($data['codigos'])) {

@@ -1,7 +1,7 @@
 <?php
 
 
-class base{
+class base_admin{
 
 
 
@@ -10,21 +10,6 @@ class base{
 
 
         $ci =& get_instance();
-
-        $ci->load->helper('cookie');
-
-        if (get_cookie('cookie_lgpd') == false){
-            $cookie= array(
-                'name'   => 'cookie_lgpd',
-                'value'  => true,
-                'expire' => '3600',
-            );
-            set_cookie($cookie);
-
-            $data['cookie_lgpd'] = true;
-        }else{
-            $data['cookie_lgpd'] = false;
-        }
 
 
 

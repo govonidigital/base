@@ -28,6 +28,9 @@ class Galeria_fotos extends CI_Controller {
 
 	public function lista(){
 
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
         $this->load->model('galeria_fotos_model');
         $data['galeria_fotos'] = $this->galeria_fotos_model->lista_galeria_fotos($this->uri->segment(4));
 
@@ -35,6 +38,9 @@ class Galeria_fotos extends CI_Controller {
     }
 
 	public function novo(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
 
         $data['id_galeria'] = $this->uri->segment(4);
         $this->template->load('admin/_template', 'admin/galeria_fotos_novo', $data);
@@ -90,6 +96,9 @@ class Galeria_fotos extends CI_Controller {
     }
 
 	public function edita(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
 
 
         $this->load->model('galeria_fotos_model');

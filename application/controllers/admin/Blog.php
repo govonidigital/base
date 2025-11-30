@@ -27,6 +27,9 @@ class Blog extends CI_Controller {
     
 	public function index(){
 
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
 		$this->load->model('blog_model');
        
         $data['blog'] = $this->blog_model->lista();
@@ -35,6 +38,11 @@ class Blog extends CI_Controller {
 	}
 
     public function lista(){ 
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
+
         $this->load->model('blog_model');
        
         $data['blog'] = $this->blog_model->lista();
@@ -43,6 +51,10 @@ class Blog extends CI_Controller {
     }
     
     public function blog_novo(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
         $this->load->model('blog_model');
         
         $data['blog'] = $this->blog_model->ver($this->uri->segment(4));
@@ -101,6 +113,11 @@ class Blog extends CI_Controller {
     }
     
     public function blog_edita(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
+
         $this->load->model('blog_model');
         
         $data['blog'] = $this->blog_model->ver($this->uri->segment(4));
@@ -155,6 +172,11 @@ class Blog extends CI_Controller {
    
     
     public function blog_deleta($data){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
+        
         $this->load->model('blog_model');
         
         $row = $this->uri->segment(4);

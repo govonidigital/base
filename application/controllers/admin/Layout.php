@@ -19,8 +19,12 @@ class Layout extends CI_Controller {
     // -------------------------------
     // TELA DE CONFIGURAÇÃO DO ADMIN
     // -------------------------------
-    public function index()
-    {
+    public function index(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
+        
         $config = $this->Layout_model->get_config();
 
         // Se não existir config, cria objeto vazio para evitar erros na view

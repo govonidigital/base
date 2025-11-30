@@ -28,6 +28,11 @@ class Principal extends CI_Controller {
 
 	public function index()
 	{
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
+
 		$data['seo_title'] = '';
 		$data['seo_description'] = '';
 		$data['seo_keywords'] = '';

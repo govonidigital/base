@@ -19,16 +19,29 @@ class Banners extends CI_Controller {
     }
 
     public function index() {
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
         $data['banners'] = $this->banners_model->lista();
         $this->template->load('admin/_template', 'admin/banners', $data);
     }
 
     public function lista() {
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
         $data['banners'] = $this->banners_model->lista();
         $this->template->load('admin/_template', 'admin/banners', $data);
     }
 
     public function banner_novo() {
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
+
         $data['banners'] = $this->banners_model->ver($this->uri->segment(4));
         $this->template->load('admin/_template', 'admin/banners_novo', $data);
     }
@@ -66,6 +79,10 @@ class Banners extends CI_Controller {
     }
 
     public function banner_edita() {
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+        
         $data['banners'] = $this->banners_model->ver($this->uri->segment(4));
         $this->template->load('admin/_template', 'admin/banners_edita', $data);
     }

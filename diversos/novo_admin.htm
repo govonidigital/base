@@ -1,20 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="title" content="<?php if (isset($seo_title)){echo $seo_title;}?>"/>
-    <meta name="description" content="<?php if (isset($seo_description)){echo $seo_description;}?>"/>
-    <meta name="Keywords" content="<?php if (isset($seo_keywords)){echo $seo_keywords;}?>" />
-    <meta name="language" content="pt-BR" />
-    <meta name="target_country" content="br" />
-    <meta name="rating" content="general"/>
-    <meta name="robots" content="index,follow"/>
-    <meta name="revisit-after" content="1 days"/>
-    <meta name="author" content="Felipe Govoni" />
-    <meta name="reply-to" content="contato@govoni.com.br"/>
-    <title><?php if (isset($seo_title)){echo $seo_title;}?></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Template</title>
     
     <!-- Bootstrap 4.6 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -524,65 +513,18 @@
         <!-- Logo -->
         <div class="sidebar-logo">
             <!-- Substitua pelo seu logo -->
-            <img src="<?php echo base_url('assets/img/logo_br.png'); ?>" class="img-fluid">
+            <img src="https://via.placeholder.com/150x50/3498db/ffffff?text=LOGO" alt="Logo">
             <!-- Ou use apenas texto -->
             <!-- <h4>Admin Panel</h4> -->
         </div>
 
-        <!-- parametros estao na library -->
+        <!-- Menu Vertical -->
         <ul class="sidebar-menu">
-
-            <li><a href="<?php echo base_url('admin/principal'); ?>"><i class="fas fa-home"></i> <span>Principal</span></a></li>
-
-            <?php if ($menu_galeria == 'SIM'){?>
-            <li><a href="<?php echo base_url('admin/galeria'); ?>"><i class="fas fa-images"></i> <span>Galeria</span></a></li>
-            <?php } ?>
+            <li>
+                <a href="#" data-title="Dashboard"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+            </li>
             
-
-            <?php if ($menu_banners == 'SIM'){?>
-            <li><a href="<?php echo base_url('admin/banners'); ?>"><i class="fas fa-image"></i> <span>Banners</span></a></li>
-            <?php } ?>
-
-            <?php if ($menu_blog == 'SIM'){?>
-            <li><a href="<?php echo base_url('admin/blog'); ?>"><i class="fas fa-blog"></i> <span>Blog</span></a></li>
-            <?php } ?>
-
-            <?php if ($menu_leads == 'SIM'){?>
-            <li><a href="<?php echo base_url('admin/leads'); ?>"><i class="fas fa-users"></i> <span>Leads</span></a></li>
-            <?php } ?>
-
-            <?php if ($menu_layout == 'SIM'){?>
-            <li><a href="<?php echo base_url('admin/layout'); ?>"><i class="fas fa-cog"></i> <span>Layout</span></a></li>
-            <?php } ?>
-
-            <?php if ($menu_codigo == 'SIM'){?>
-            <li><a href="<?php echo base_url('admin/codigos'); ?>"><i class="fas fa-code"></i> <span>Codigo</span></a></li>
-            <?php } ?>
-
-            <?php if ($menu_email == 'SIM'){?>
-            <li><a href="<?php echo base_url('admin/email'); ?>"><i class="fas fa-envelope"></i> <span>Email</span></a></li>
-            <?php } ?>
-
-            <?php if ($menu_usuarios == 'SIM'){?>
-            <li><a href="<?php echo base_url('admin/usuarios'); ?>"><i class="fas fa-user"></i> <span>Usuários</span></a></li>
-            <?php } ?>
-
-
-            <li><a href="<?php echo base_url('principal'); ?>"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            <!-- Menu com Dropdown Nível 1
+            <!-- Menu com Dropdown Nível 1 -->
             <li>
                 <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#menu1" data-title="Usuários">
                     <i class="fas fa-users"></i> <span>Usuários</span>
@@ -594,9 +536,31 @@
                 </ul>
             </li>
 
-            
+            <!-- Menu com Dropdown Nível 1 e Nível 2 -->
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#menu2" data-title="Produtos">
+                    <i class="fas fa-shopping-cart"></i> <span>Produtos</span>
+                </a>
+                <ul class="submenu collapse" id="menu2">
+                    <li><a href="#"><i class="fas fa-list"></i> <span>Todos os Produtos</span></a></li>
+                    <li><a href="#"><i class="fas fa-plus"></i> <span>Adicionar Produto</span></a></li>
+                    
+                    <!-- Submenu Nível 2 -->
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#submenu2-1">
+                            <i class="fas fa-folder"></i> <span>Categorias</span>
+                        </a>
+                        <ul class="submenu collapse" id="submenu2-1">
+                            <li><a href="#"><i class="fas fa-list-ul"></i> <span>Ver Categorias</span></a></li>
+                            <li><a href="#"><i class="fas fa-plus-circle"></i> <span>Nova Categoria</span></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#"><i class="fas fa-tags"></i> <span>Marcas</span></a></li>
+                </ul>
+            </li>
 
-             
+            <!-- Outro menu com Dropdown Nível 1 e 2 -->
             <li>
                 <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#menu3" data-title="Estoque">
                     <i class="fas fa-box"></i> <span>Estoque</span>
@@ -605,6 +569,7 @@
                     <li><a href="#"><i class="fas fa-warehouse"></i> <span>Inventário</span></a></li>
                     <li><a href="#"><i class="fas fa-exchange-alt"></i> <span>Movimentações</span></a></li>
                     
+                    <!-- Submenu Nível 2 -->
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#submenu3-1">
                             <i class="fas fa-chart-line"></i> <span>Relatórios</span>
@@ -616,7 +581,17 @@
                     </li>
                 </ul>
             </li>
-            
+
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#menu4" data-title="Financeiro">
+                    <i class="fas fa-file-invoice-dollar"></i> <span>Financeiro</span>
+                </a>
+                <ul class="submenu collapse" id="menu4">
+                    <li><a href="#"><i class="fas fa-dollar-sign"></i> <span>Receitas</span></a></li>
+                    <li><a href="#"><i class="fas fa-money-bill-wave"></i> <span>Despesas</span></a></li>
+                    <li><a href="#"><i class="fas fa-chart-pie"></i> <span>Relatórios</span></a></li>
+                </ul>
+            </li>
 
             <li>
                 <a href="#" data-title="Configurações"><i class="fas fa-cog"></i> <span>Configurações</span></a>
@@ -624,7 +599,7 @@
 
             <li>
                 <a href="#" data-title="Ajuda"><i class="fas fa-question-circle"></i> <span>Ajuda</span></a>
-            </li>-->
+            </li>
         </ul>
     </nav>
 
@@ -637,21 +612,21 @@
         </div>
 
         <div class="top-navbar-right">
-            <!--
+            <!-- Atalhos Importantes (Visível apenas no Desktop) -->
             <div class="top-shortcuts">
                 <a href="#"><i class="fas fa-plus"></i> Novo</a>
                 <a href="#"><i class="fas fa-bell"></i> Notificações</a>
                 <a href="#"><i class="fas fa-envelope"></i> Mensagens</a>
             </div>
 
-            
+            <!-- Menu Dropdown do Usuário -->
             <div class="user-menu dropdown">
                 <button class="dropdown-toggle" data-toggle="dropdown">
                     <span class="user-avatar">JD</span>
                     <span>João Silva</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    
+                    <!-- Atalhos Mobile (Visível apenas no Mobile) -->
                     <div class="mobile-shortcuts">
                         <h6 class="dropdown-header">Atalhos Rápidos</h6>
                         <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> Novo</a>
@@ -661,21 +636,169 @@
                         <h6 class="dropdown-header">Conta</h6>
                     </div>
                     
-                    
+                    <!-- Menu padrão do usuário -->
                     <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Meu Perfil</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Configurações</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-question-circle"></i> Ajuda</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
                 </div>
-            </div>-->
+            </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
         <div class="container-fluid">
-            
-            <?php echo $contents; ?>
+            <h2 class="mb-4">Dashboard</h2>
 
+            <!-- Cards de Exemplo -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-card text-center">
+                        <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                        <h5>1,234</h5>
+                        <p class="text-muted mb-0">Usuários</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-card text-center">
+                        <i class="fas fa-shopping-cart fa-3x text-success mb-3"></i>
+                        <h5>567</h5>
+                        <p class="text-muted mb-0">Vendas</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-card text-center">
+                        <i class="fas fa-box fa-3x text-warning mb-3"></i>
+                        <h5>890</h5>
+                        <p class="text-muted mb-0">Produtos</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-card text-center">
+                        <i class="fas fa-dollar-sign fa-3x text-info mb-3"></i>
+                        <h5>R$ 45.678</h5>
+                        <p class="text-muted mb-0">Receita</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteúdo de Exemplo -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="content-card">
+                        <h5><i class="fas fa-chart-line"></i> Gráfico de Vendas</h5>
+                        <p class="text-muted">Aqui você pode adicionar gráficos e outras visualizações</p>
+                        <div style="height: 300px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;">
+                            <span class="text-muted">Área para gráfico</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="content-card">
+                        <h5><i class="fas fa-tasks"></i> Tarefas Recentes</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tarefa 1 <span class="badge badge-primary float-right">Novo</span></li>
+                            <li class="list-group-item">Tarefa 2 <span class="badge badge-success float-right">Completo</span></li>
+                            <li class="list-group-item">Tarefa 3 <span class="badge badge-warning float-right">Pendente</span></li>
+                            <li class="list-group-item">Tarefa 4 <span class="badge badge-info float-right">Em Progresso</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mais Conteúdo para Demonstrar Scroll -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-card">
+                        <h5><i class="fas fa-table"></i> Tabela de Exemplo</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nome</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>João Silva</td>
+                                        <td>joao@email.com</td>
+                                        <td><span class="badge badge-success">Ativo</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Maria Santos</td>
+                                        <td>maria@email.com</td>
+                                        <td><span class="badge badge-success">Ativo</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Pedro Oliveira</td>
+                                        <td>pedro@email.com</td>
+                                        <td><span class="badge badge-warning">Pendente</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Ana Costa</td>
+                                        <td>ana@email.com</td>
+                                        <td><span class="badge badge-success">Ativo</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Carlos Souza</td>
+                                        <td>carlos@email.com</td>
+                                        <td><span class="badge badge-danger">Inativo</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mais conteúdo para scroll -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="content-card">
+                        <h5>Card Adicional 1</h5>
+                        <p>Conteúdo adicional para demonstrar o scroll infinito da página.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="content-card">
+                        <h5>Card Adicional 2</h5>
+                        <p>Mais conteúdo para demonstrar o scroll infinito da página.</p>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </main>
@@ -838,6 +961,3 @@
 
 </body>
 </html>
-
-
-

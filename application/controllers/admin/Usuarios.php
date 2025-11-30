@@ -28,6 +28,9 @@ class Usuarios extends CI_Controller {
     
 	public function index(){
 
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
 		$this->load->model('usuarios_model');
         $data['usuarios'] = $this->usuarios_model->lista();
 
@@ -36,6 +39,9 @@ class Usuarios extends CI_Controller {
 
     
     public function novo(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
 
         $this->load->model('usuarios_model');
         $data['usuarios'] = $this->usuarios_model->ver($this->uri->segment(4));
@@ -61,6 +67,9 @@ class Usuarios extends CI_Controller {
 
     
     public function edita(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
 
         $this->load->model('usuarios_model');
         $data['usuario'] = $this->usuarios_model->ver($this->uri->segment(4));

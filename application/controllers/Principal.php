@@ -12,6 +12,7 @@ class Principal extends CI_Controller {
 
 
 
+
 		$data['seo_title'] = '';
 		$data['seo_description'] = '';
 		$data['seo_keywords'] = '';

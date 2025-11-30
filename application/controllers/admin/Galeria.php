@@ -28,6 +28,9 @@ class Galeria extends CI_Controller {
 
 	public function index(){
 
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
 		$this->load->model('galeria_model');
        
         $data['galerias'] = $this->galeria_model->lista();
@@ -38,7 +41,9 @@ class Galeria extends CI_Controller {
 
 	public function novo(){
 
-        $data = '';
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
+
         $this->template->load('admin/_template', 'admin/galeria_novo', $data);
     }
 
@@ -59,6 +64,9 @@ class Galeria extends CI_Controller {
     }
 
 	public function edita(){
+
+        $this->load->library('base_admin');
+		$data = $this->base_admin->site();
 
         $this->load->model('galeria_model');
         
